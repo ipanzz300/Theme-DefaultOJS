@@ -54,44 +54,48 @@ body .pkp_structure_main .page_issue_archive h1::after {
   flex-direction: column !important;
   height: 100% !important;
   min-height: 400px !important;
-
   background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.4)
+    105deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(13, 110, 253, 0.15) 100%
   ) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-
-  border-radius: 15px !important;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1) !important;
-
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  background-size: 200% 200% !important;
+  background-position: 0% 50% !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    background-position 0.8s ease,
+    border-color 0.3s ease !important;
   overflow: hidden !important;
   z-index: 1 !important;
 }
 
 .issues_archive li:nth-child(odd) .obj_issue_summary {
-  transform: rotate(-3deg) translateY(0) !important;
+  transform: rotate(-2deg) translateY(0) !important;
 }
 
 .issues_archive li:nth-child(even) .obj_issue_summary {
-  transform: rotate(3deg) translateY(0) !important;
+  transform: rotate(2deg) translateY(0) !important;
 }
 
 .issues_archive li:nth-child(3n) .obj_issue_summary {
-  transform: rotate(-1.5deg) translateY(5px) !important;
+  transform: rotate(-1deg) translateY(5px) !important;
 }
 
 .issues_archive li:hover .obj_issue_summary {
-  transform: rotate(0deg) scale(1.05) !important;
+  transform: rotate(0deg) translateY(-10px) scale(1.02) !important;
+  background-position: 100% 50% !important;
+  box-shadow: 0 20px 50px rgba(13, 110, 253, 0.25) !important;
+  border-color: #fff !important;
   z-index: 10 !important;
-  background: rgba(255, 255, 255, 1) !important;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 1) !important;
 }
 
 .issues_archive .cover {
