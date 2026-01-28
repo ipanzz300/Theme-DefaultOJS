@@ -354,23 +354,128 @@
     z-index: 10 !important;
   }
 
-  @keyframes fadeInContent {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .card-footer-custom {
+    margin-top: 30px !important;
+    padding-top: 25px !important;
+    border-top: 1px solid #e2e8f0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
   }
-  @keyframes flowGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+
+  a.learn-more {
+    position: relative !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    outline: none !important;
+    border: 0 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    width: 16rem !important;
+    height: 3.5rem !important;
+    border-radius: 3.5rem !important;
+    border: 2px solid #0d6efd !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    transform: translateZ(0) !important;
+  }
+
+  a.learn-more .button-text {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.076, 1) !important;
+    padding-left: 2rem !important;
+    box-sizing: border-box !important;
+  }
+
+  a.learn-more .button-text.blue {
+    color: #0d6efd !important;
+    z-index: 1 !important;
+  }
+
+  a.learn-more .button-text.white {
+    color: #fff !important;
+    width: 16rem !important;
+  }
+
+  a.learn-more .circle {
+    position: absolute !important;
+    display: block !important;
+    margin: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 3.5rem !important;
+    height: 100% !important;
+    background: #0d6efd !important;
+    border-radius: 3.5rem !important;
+    z-index: 2 !important;
+    overflow: hidden !important;
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.076, 1) !important;
+  }
+
+  a.learn-more .circle .icon {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important;
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    background: none !important;
+    z-index: 10 !important;
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.076, 1) !important;
+  }
+
+  a.learn-more .circle .icon.arrow {
+    width: 1.125rem !important;
+    height: 2px !important;
+    background: #fff !important;
+    left: 1.2rem !important;
+    right: auto !important;
+    margin: 0 !important;
+  }
+
+  a.learn-more .circle .icon.arrow::before {
+    position: absolute !important;
+    content: "" !important;
+    top: -4px !important;
+    right: 0 !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-top: 2px solid #fff !important;
+    border-right: 2px solid #fff !important;
+    transform: rotate(45deg) !important;
+  }
+
+  a.learn-more:hover .circle {
+    width: 100% !important;
+  }
+
+  a.learn-more:hover .circle .icon.arrow {
+    transform: translate(11.5rem, -50%) !important;
+  }
+
+  a.learn-more:hover .button-text {
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+  }
+
+  a.learn-more:hover {
+    border-color: #0d6efd !important;
   }
 
   @media (max-width: 768px) {
@@ -410,5 +515,29 @@
       display: inline-block !important;
       margin-top: 10px !important;
     }
+
+    .card-footer-custom {
+      text-align: center !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes flowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
