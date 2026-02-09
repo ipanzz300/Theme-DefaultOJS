@@ -29,10 +29,50 @@
 	<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
 		{include file="frontend/components/skipLinks.tpl"}
 
-		{* TOP BAR BIRU (Hanya Menu User/Admin di sini) *}
+		{* TOP BAR BIRU (Grup menu diletakkan di kanan semua) *}
 		<div class="top-simple-bar">
 		    <div class="top-simple-content">
+		        
+		        {* GRUP KIRI: Kosong (Atau bisa untuk teks lain nanti) *}
+		        <div class="top-bar-left-group"></div>
+
+		        {* GRUP KANAN: Bahasa + Menu User *}
 		        <div class="top-bar-right-group">
+		            {if $languageToggleLocales && $languageToggleLocales|@count > 1}
+		                <div class="language-switcher-dropdown">
+		                    <button class="lang-btn" aria-haspopup="true" aria-expanded="false">
+		                        <span class="fa fa-globe"></span>
+		                        <span class="current-lang">
+		                            {foreach from=$languageToggleLocales item=localeName key=localeKey}
+		                                {if $localeKey == $currentLocale}
+                                            {if $currentLocale == 'en_US' or $currentLocale == 'en'}
+                                                {if $localeKey|substr:0:2 == 'id'}Indonesian{else}English{/if}
+                                            {else}
+                                                {if $localeKey|substr:0:2 == 'en'}Inggris{else}Bahasa Indonesia{/if}
+                                            {/if}
+                                        {/if}
+		                            {/foreach}
+		                        </span>
+		                        <span class="fa fa-chevron-down"></span>
+		                    </button>
+		                    <ul class="lang-list">
+		                        {foreach from=$languageToggleLocales item=localeName key=localeKey}
+                                    {assign var="navLocaleName" value=$localeName}
+                                    {if $currentLocale == 'en_US' or $currentLocale == 'en'}
+                                        {if $localeKey|substr:0:2 == 'id'}{assign var="navLocaleName" value="Indonesian"}{else}{assign var="navLocaleName" value="English"}{/if}
+                                    {else}
+                                        {if $localeKey|substr:0:2 == 'en'}{assign var="navLocaleName" value="Inggris"}{else}{assign var="navLocaleName" value="Bahasa Indonesia"}{/if}
+                                    {/if}
+		                            <li {if $localeKey == $currentLocale}class="active"{/if}>
+		                                <a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}">
+		                                    {$navLocaleName}
+		                                </a>
+		                            </li>
+		                        {/foreach}
+		                    </ul>
+		                </div>
+		            {/if}
+
 		            <div class="top-user-menu-wrapper">
 		                {load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}
 		            </div>
@@ -88,25 +128,24 @@
         </div>
     </div>
 </div>
+</div> {* Closing pkp_site_name_wrapper *}
 
-			{* NAVIGASI UTAMA (Tanpa Menu User agar tidak double) *}
-			<nav class="pkp_site_nav_menu" aria-label="{translate|escape key="common.navigation.site"}">
-				<div class="pkp_navigation_primary_row">
-					<div class="pkp_navigation_primary_wrapper">
-						{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
-
-						{if $currentContext && $requestedPage !== 'search'}
-							<div class="pkp_navigation_search_wrapper">
-								<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
-									<span class="fa fa-search"></span> {translate key="common.search"}
-								</a>
-							</div>
-						{/if}
-					</div>
-				</div>
-			</nav>
-		</div>
 	</header>
+
+
+	<nav class="custom-main-navbar" aria-label="{translate|escape key="common.navigation.site"}">
+		<div class="pkp_navigation_primary_wrapper">
+			{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
+
+			{if $currentContext && $requestedPage !== 'search'}
+				<div class="pkp_navigation_search_wrapper">
+					<a href="{url page="search"}" class="pkp_search pkp_search_desktop">
+						<span class="fa fa-search"></span> {translate key="common.search"}
+					</a>
+				</div>
+			{/if}
+		</div>
+	</nav>
 
 	{if $isFullWidth}
 		{assign var=hasSidebar value=0}

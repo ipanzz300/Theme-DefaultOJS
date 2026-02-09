@@ -3,191 +3,191 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-30T06:56:50-07:00\n"
-"PO-Revision-Date: 2019-09-30T06:56:50-07:00\n"
+"PO-Revision-Date: 2026-02-09T10:45:00+07:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: \n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "plugins.themes.defaultOjs.name"
-msgstr "Default OJS Theme"
+msgstr "Tema Default OJS"
 
 msgid "plugins.themes.defaultOjs.description"
-msgstr "This theme implements the default OJS theme."
+msgstr "Tema ini mengimplementasikan tema default OJS."
 
 msgid "plugins.themes.defaultOjs.option.typography.label"
-msgstr "Typography"
+msgstr "Tipografi"
 
 msgid "plugins.themes.defaultOjs.option.typography.description"
-msgstr "Choose a font combination that suits this journal."
+msgstr "Pilih kombinasi font yang sesuai untuk jurnal ini."
 
 msgid "plugins.themes.defaultOjs.option.typography.notoSans"
 msgstr ""
-"Noto Sans: A digital-native font designed by Google for extensive language "
-"support."
+"Noto Sans: Font digital native yang dirancang oleh Google untuk dukungan bahasa "
+"yang luas."
 
 msgid "plugins.themes.defaultOjs.option.typography.notoSerif"
-msgstr "Noto Serif: A serif variant of Google's digital-native font."
+msgstr "Noto Serif: Varian serif dari font digital native Google."
 
 msgid "plugins.themes.defaultOjs.option.typography.notoSerif_notoSans"
 msgstr ""
-"Noto Serif/Noto Sans: A complementary pairing with serif headings and sans-"
-"serif body text."
+"Noto Serif/Noto Sans: Pasangan yang saling melengkapi dengan judul serif dan teks "
+"tubuh sans-serif."
 
 msgid "plugins.themes.defaultOjs.option.typography.notoSans_notoSerif"
 msgstr ""
-"Noto Sans/Noto Serif: A complementary pairing with sans-serif headings and "
-"serif body text."
+"Noto Sans/Noto Serif: Pasangan yang saling melengkapi dengan judul sans-serif dan "
+"teks tubuh serif."
 
 msgid "plugins.themes.defaultOjs.option.typography.lato"
-msgstr "Lato: A popular modern sans-serif font."
+msgstr "Lato: Font sans-serif modern yang populer."
 
 msgid "plugins.themes.defaultOjs.option.typography.lora"
-msgstr "Lora: A wide-set serif font good for reading online."
+msgstr "Lora: Font serif lebar yang bagus untuk dibaca secara online."
 
 msgid "plugins.themes.defaultOjs.option.typography.lora_openSans"
 msgstr ""
-"Lora/Open Sans: A complimentary pairing with serif headings and sans-serif "
-"body text."
+"Lora/Open Sans: Pasangan yang saling melengkapi dengan judul serif dan teks tubuh "
+"sans-serif."
 
 msgid "plugins.themes.defaultOjs.option.colour.label"
-msgstr "Colour"
+msgstr "Warna"
 
 msgid "plugins.themes.defaultOjs.option.colour.description"
-msgstr "Choose a colour for the header."
+msgstr "Pilih warna untuk header."
 
 msgid "plugins.themes.defaultOjs.option.showDescriptionInJournalIndex.option"
-msgstr "Show the journal summary on the homepage."
+msgstr "Tampilkan ringkasan jurnal di beranda."
 
 msgid "plugins.themes.defaultOjs.option.useHomepageImageAsHeader.label"
-msgstr "Header Background Image"
+msgstr "Gambar Latar Belakang Header"
 
 msgid "plugins.themes.defaultOjs.option.useHomepageImageAsHeader.description"
 msgstr ""
-"When a homepage image has been uploaded, display it in the background of the "
-"header instead of it's usual position on the homepage."
+"Ketika gambar beranda telah diunggah, tampilkan di latar belakang header alih-alih "
+"posisi biasanya di beranda."
 
 msgid "plugins.themes.defaultOjs.option.useHomepageImageAsHeader.option"
-msgstr "Show the homepage image as the header background."
+msgstr "Tampilkan gambar beranda sebagai latar belakang header."
 
 msgid "plugins.themes.defaultOjs.option.displayStats.label"
-msgstr "Usage statistics display options"
+msgstr "Opsi tampilan statistik penggunaan"
 
 msgid "plugins.themes.defaultOjs.option.displayStats.none"
-msgstr "Do not display submission usage statistics chart for reader."
+msgstr "Jangan tampilkan grafik statistik penggunaan naskah untuk pembaca."
 
 msgid "plugins.themes.defaultOjs.option.displayStats.bar"
-msgstr "Use bar type of the chart for usage statistics display."
+msgstr "Gunakan tipe batang grafik untuk tampilan statistik penggunaan."
 
 msgid "plugins.themes.defaultOjs.option.displayStats.line"
-msgstr "Use line type of the chart for usage statistics display."
+msgstr "Gunakan tipe garis grafik untuk tampilan statistik penggunaan."
 
 msgid "plugins.themes.defaultOjs.displayStats.monthInitials"
-msgstr "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+msgstr "Jan Feb Mar Apr Mei Jun Jul Agu Sep Okt Nov Des"
 
 msgid "plugins.themes.defaultOjs.displayStats.downloads"
-msgstr "Downloads"
+msgstr "Unduhan"
 
 msgid "plugins.themes.defaultOjs.displayStats.noStats"
-msgstr "Download data is not yet available."
+msgstr "Data unduhan belum tersedia."
 
 msgid "plugins.themes.defaultOjs.hero.subtitle"
-msgstr "Open Access Journal"
+msgstr "Jurnal Akses Terbuka"
 
 msgid "plugins.themes.defaultOjs.hero.defaultTagline"
-msgstr "Explore high-quality research and contribute to our academic community."
+msgstr "Jelajahi penelitian berkualitas tinggi dan berkontribusi pada komunitas akademik kami."
 
 msgid "plugins.themes.defaultOjs.hero.makeSubmission"
-msgstr "Make a Submission"
+msgstr "Kirimkan Naskah"
 
 msgid "plugins.themes.defaultOjs.hero.viewCurrent"
-msgstr "View Current Issue"
+msgstr "Lihat Terbitan Terkini"
 
 msgid "plugins.themes.defaultOjs.badge.latest"
-msgstr "Latest"
+msgstr "Terbaru"
 
 msgid "plugins.themes.defaultOjs.link.viewAll"
-msgstr "View All Issues"
+msgstr "Lihat Semua Terbitan"
 
 msgid "plugins.themes.defaultOjs.zero.title"
-msgstr "Welcome to Our Journal"
+msgstr "Selamat Datang di Jurnal Kami"
 
 msgid "plugins.themes.defaultOjs.zero.preparing"
-msgstr "We are currently preparing our first issue."
+msgstr "Kami sedang menyiapkan terbitan pertama kami."
 
 msgid "plugins.themes.defaultOjs.zero.dedicated"
-msgstr "is dedicated to publishing high-quality research and fostering academic excellence."
+msgstr "didedikasikan untuk menerbitkan penelitian berkualitas tinggi dan membina keunggulan akademik."
 
 msgid "plugins.themes.defaultOjs.zero.stepsTitle"
-msgstr "Get Started in 3 Steps"
+msgstr "Mulai dalam 3 Langkah"
 
 msgid "plugins.themes.defaultOjs.zero.step1Label"
-msgstr "Account"
+msgstr "Akun"
 
 msgid "plugins.themes.defaultOjs.zero.step1Text"
-msgstr "Register & Login"
+msgstr "Daftar & Login"
 
 msgid "plugins.themes.defaultOjs.zero.step2Label"
-msgstr "Preparation"
+msgstr "Persiapan"
 
 msgid "plugins.themes.defaultOjs.zero.step2Text"
-msgstr "Check Guidelines"
+msgstr "Cek Panduan"
 
 msgid "plugins.themes.defaultOjs.zero.step3Label"
-msgstr "Submission"
+msgstr "Pengiriman"
 
 msgid "plugins.themes.defaultOjs.zero.step3Text"
-msgstr "Submit Online"
+msgstr "Kirim Online"
 
 msgid "plugins.themes.defaultOjs.zero.startSubmission"
-msgstr "Start a Submission"
+msgstr "Mulai Pengiriman Naskah"
 
 msgid "plugins.themes.defaultOjs.zero.learnMore"
-msgstr "Learn More About Us"
+msgstr "Pelajari Lebih Lanjut"
 
 msgid "plugins.themes.defaultOjs.issue.preparingNext"
-msgstr "is currently preparing its next publication."
+msgstr "sedang menyiapkan publikasi berikutnya."
 
 msgid "plugins.themes.defaultOjs.issue.stayTuned"
-msgstr "Stay tuned for our latest research updates."
+msgstr "Nantikan pembaruan penelitian terbaru kami."
 
 msgid "plugins.themes.defaultOjs.issue.browsePast"
-msgstr "Browse Past Issues"
+msgstr "Lihat Terbitan Lama"
 
 msgid "plugins.themes.defaultOjs.archive.reviewing"
-msgstr "Our editorial team is currently reviewing submissions for our upcoming issues."
+msgstr "Tim editorial kami saat ini sedang meninjau naskah untuk terbitan mendatang."
 
 msgid "plugins.themes.defaultOjs.archive.checkBack"
-msgstr "Please check back soon or join our community as a contributor."
+msgstr "Silakan cek kembali segera atau bergabunglah dengan komunitas kami sebagai kontributor."
 
 msgid "plugins.themes.defaultOjs.archive.howToSubmit"
-msgstr "Learn How to Submit"
+msgstr "Pelajari Cara Mengirim Naskah"
 
 msgid "plugins.themes.defaultOjs.footer.defaultDesc"
-msgstr "Open Access Journal System managed by Universitas Teknologi Indonesia."
+msgstr "Sistem Jurnal Akses Terbuka yang dikelola oleh Universitas Teknologi Indonesia."
 
 msgid "plugins.themes.defaultOjs.footer.quickLinks"
-msgstr "Quick Links"
+msgstr "Tautan Cepat"
 
 msgid "plugins.themes.defaultOjs.contact.address"
-msgstr "Address"
+msgstr "Alamat"
 
 msgid "plugins.themes.defaultOjs.contact.email"
 msgstr "Email"
 
 msgid "plugins.themes.defaultOjs.contact.publisher"
-msgstr "Publisher"
+msgstr "Penerbit"
 
 msgid "plugins.themes.defaultOjs.footer.allRightsReserved"
-msgstr "All Rights Reserved"
+msgstr "Hak Cipta Dilindungi Undang-Undang"
 
 msgid "plugins.themes.defaultOjs.article.pages"
-msgstr "Pages"
+msgstr "Hal."
 
 msgid "plugins.themes.defaultOjs.article.views"
-msgstr "Views"
+msgstr "Dilihat"
 
 msgid "plugins.themes.defaultOjs.article.downloads"
-msgstr "Downloads"
+msgstr "Unduhan"

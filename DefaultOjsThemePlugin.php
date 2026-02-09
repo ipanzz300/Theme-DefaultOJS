@@ -18,6 +18,7 @@ use APP\core\Application;
 use APP\file\PublicFileManager;
 use PKP\config\Config;
 use PKP\session\SessionManager;
+use PKP\plugins\Hook;
 
 class DefaultOjsThemePlugin extends \PKP\plugins\ThemePlugin
 {
@@ -204,6 +205,25 @@ class DefaultOjsThemePlugin extends \PKP\plugins\ThemePlugin
 
         // Add navigation menu areas for this theme
         $this->addMenuArea(['primary', 'user']);
+
+        // Register hook to provide languageToggleLocales to all templates
+        Hook::add('TemplateManager::display', [$this, 'provideLanguageLocales']);
+    }
+
+    /**
+     * Provide languageToggleLocales to templates
+     */
+    public function provideLanguageLocales($hookName, $args)
+    {
+        $templateMgr = $args[0];
+        $request = Application::get()->getRequest();
+        $context = $request->getContext();
+
+        if ($context) {
+            $templateMgr->assign('languageToggleLocales', $context->getSupportedLocaleNames());
+        }
+
+        return false;
     }
 
    

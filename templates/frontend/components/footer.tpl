@@ -3,20 +3,11 @@
  *
  *}
 
-	</div>
-
-	{if empty($isFullWidth)}
-		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
-		{if $sidebarCode}
-			<div class="pkp_structure_sidebar left" role="complementary">
-				{$sidebarCode}
-			</div>
-		{/if}
-	{/if}
+	</div> {* Penutup div content *}
 
 </div>{* Akhir dari pkp_structure_body *}
 
-
+{* === MULAI FOOTER === *}
 <div class="custom-footer-wrapper" role="contentinfo">
     <div class="custom-footer-container">
 
@@ -50,7 +41,7 @@
                     {if $currentContext}
                         {$currentContext->getLocalizedDescription()|strip_tags|truncate:150:"..."}
                     {else}
-                        Open Access Journal System managed by Universitas Teknologi Indonesia.
+                        {translate key="plugins.themes.defaultOjs.footer.defaultDesc"}
                     {/if}
                 </p>
             </div>
@@ -67,7 +58,7 @@
 
             {* KOLOM 3: Quick Links *}
             <div class="footer-col">
-                <h3 class="footer-heading">Quick Links</h3>
+                <h3 class="footer-heading">{translate key="plugins.themes.defaultOjs.footer.quickLinks"}</h3>
                 <ul class="footer-links">
                     <li><a href="{url page="about" op="editorialTeam"}">{translate key="about.editorialTeam"}</a></li>
                     <li><a href="{url page="about" op="contact"}">{translate key="about.contact"}</a></li>
@@ -83,14 +74,14 @@
                     
                     {if $currentContext && $currentContext->getData('mailingAddress')}
                     <p>
-                        <strong>Address:</strong><br>
+                        <strong>{translate key="plugins.themes.defaultOjs.contact.address"}:</strong><br>
                         {$currentContext->getData('mailingAddress')|nl2br|strip_tags}
                     </p>
                     {/if}
 
                     {if $currentContext && $currentContext->getData('contactEmail')}
                     <p>
-                        <strong>Email:</strong><br>
+                        <strong>{translate key="plugins.themes.defaultOjs.contact.email"}:</strong><br>
                         <a href="mailto:{$currentContext->getData('contactEmail')|escape}">
                             {$currentContext->getData('contactEmail')|escape}
                         </a>
@@ -99,7 +90,7 @@
 
                     {if $currentContext && $currentContext->getData('publisherInstitution')}
                     <p>
-                        <strong>Publisher:</strong><br>
+                        <strong>{translate key="plugins.themes.defaultOjs.contact.publisher"}:</strong><br>
                         {$currentContext->getData('publisherInstitution')|escape}
                     </p>
                     {/if}
@@ -116,7 +107,7 @@
                 {if $currentContext}
                     <strong>{$currentContext->getLocalizedName()|escape}</strong>
                 {/if}
-                . All Rights Reserved.
+                . {translate key="plugins.themes.defaultOjs.footer.allRightsReserved"}.
             </p>
         </div>
 

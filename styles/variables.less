@@ -14,26 +14,26 @@
 //
 
 // Background
-@bg:                     #fff;
-@bg-shade:               #ddd;
-@bg-base:                #1E6292; // Accent color used in the header
+@bg: #fff;
+@bg-shade: #ddd;
+@bg-base: #1e6292; // Accent color used in the header
 
 // Primary "anchor" color for links
-@primary:                #006798;
-@primary-lift:           lighten(@primary, 10%);
+@primary: #006798;
+@primary-lift: lighten(@primary, 10%);
 
 // Yes/no, success/error, on/off, go/stop, etc. Typically green and red.
-@yes:                    #00b24e;
-@no:                     #ff4040;
+@yes: #00b24e;
+@no: #ff4040;
 
 // Text
-@text:                   rgba(0,0,0,0.87);
-@text-light:             rgba(0,0,0,0.54);
-@text-bg-base:           #fff;
+@text: rgba(0, 0, 0, 0.87);
+@text-light: rgba(0, 0, 0, 0.54);
+@text-bg-base: #fff;
 
 // Border colors
-@bg-border-color:        @bg-shade;
-@bg-base-border-color:   rgba(255,255,255,0.1);
+@bg-border-color: @bg-shade;
+@bg-base-border-color: rgba(255, 255, 255, 0.1);
 
 //
 // Spacing
@@ -44,60 +44,142 @@
 // spacings should also use this baseline. However, in some cases with inline
 // elements it is more appropriate to use an `em` spacing.
 //
-@rem:                    14px;
-@base:                   0.714rem;
-@half:                   0.357rem;
-@double:                 1.43rem;
-@triple:                 2.143rem;
-@quadruple:              2.857rem;
+@rem: 14px;
+@base: 0.714rem;
+@half: 0.357rem;
+@double: 1.43rem;
+@triple: 2.143rem;
+@quadruple: 2.857rem;
 
 //
 // Typography
 //
-@font:                   "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-@font-heading:           @font;
-@font-site-title:        @font-heading;
-@font-sml:               0.93rem;
-@line-sml:               1.43rem;
-@font-base:              1rem;
-@line-base:              1.43rem;
-@line-base-large:        1.785rem; // large blocks of text
-@font-bump:              1.143rem;
-@line-bump:              1.43rem;
-@font-lead:              1.285rem;
-@line-lead:              2.143rem;
-@font-header:            1.714rem;
-@line-header:            2.143rem;
+@font:
+  "Noto Sans",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Roboto",
+  "Oxygen-Sans",
+  "Ubuntu",
+  "Cantarell",
+  "Helvetica Neue",
+  sans-serif;
+@font-heading: @font;
+@font-site-title: @font-heading;
+@font-sml: 0.93rem;
+@line-sml: 1.43rem;
+@font-base: 1rem;
+@line-base: 1.43rem;
+@line-base-large: 1.785rem; // large blocks of text
+@font-bump: 1.143rem;
+@line-bump: 1.43rem;
+@font-lead: 1.285rem;
+@line-lead: 2.143rem;
+@font-header: 1.714rem;
+@line-header: 2.143rem;
 
 // Font weights
-@normal:                 400;
-@bold:                   700;
+@normal: 400;
+@bold: 700;
 
 //
 // Borders
 //
-@bg-border:              1px solid @bg-border-color;
-@form-border:            1px solid rgba(0,0,0,0.4);
-@radius:                 3px;
-
+@bg-border: 1px solid @bg-border-color;
+@form-border: 1px solid rgba(0, 0, 0, 0.4);
+@radius: 3px;
 
 //
 // Screen width breakpoints
 //
-@screen-phone:                480px;
-@screen-tablet:               768px;
-@screen-tablet-container:     @screen-tablet - 40px;
-@screen-desktop:              992px;
-@screen-desktop-container:    @screen-desktop - 40px;
-@screen-lg-desktop:           1200px;
+@screen-phone: 480px;
+@screen-tablet: 768px;
+@screen-tablet-container: @screen-tablet - 40px;
+@screen-desktop: 992px;
+@screen-desktop-container: @screen-desktop - 40px;
+@screen-lg-desktop: 1200px;
 @screen-lg-desktop-container: @screen-lg-desktop - 40px;
 
 // Fixed widths and heights
-@sidebar-width:               300px;
-@logo-height:                 8.571rem;
+@sidebar-width: 300px;
+@logo-height: 8.571rem;
 
 // Base URL
 // The base URL is set appropriately before the LESS stylesheet is compiled and
 // will point to the theme's base directory. The variable can be used to point
 // to image and font assets.
-@base-url:                   ''; // Leave empty
+@base-url: ""; // Leave empty
+
+// Variabel Warna (Sesuaikan dengan branding jurnal)
+@color-primary: #72a0b5;
+@color-text-muted: #718096;
+@border-color: #e2e8f0;
+
+/* =========================================
+   CUSTOM ISSUE TOC STYLE
+   ========================================= */
+
+.card-footer-custom {
+  margin-top: 25px !important;
+  padding-top: 15px !important;
+  border-top: 1px solid @border-color !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+
+  @media (max-width: 768px) {
+    justify-content: center !important;
+  }
+}
+
+.view-all-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: @color-primary !important;
+  transition: all 0.2s ease-in-out !important;
+
+  .text-label {
+    font-family: "Arial", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    line-height: 1 !important;
+  }
+
+  .icon-chevron {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: 6px !important;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    .icon-chevron {
+      transform: translateX(3px) !important;
+    }
+  }
+}
+
+/* Desain Issue Tanpa Deskripsi */
+.obj_issue_toc {
+  .heading {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+
+    &.no-description {
+      border-left: 4px solid @color-primary !important;
+      padding-left: 20px !important;
+      margin-top: 10px !important;
+    }
+  }
+
+  .published {
+    font-size: 14px;
+    color: @color-text-muted;
+    margin-top: 10px;
+  }
+}

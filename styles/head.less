@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
+/* === 1. RESET BASIC === */
 .pkp_head_wrapper ul,
 .pkp_head_wrapper li,
 .pkp_site_nav_menu ul,
@@ -19,6 +20,7 @@ li {
   margin-left: 0 !important;
 }
 
+/* === 2. TOP BAR (FIXED + GRADASI HIDUP + ANTI NEMBUS) === */
 body .top-simple-bar {
   background-image: linear-gradient(
     90deg,
@@ -31,60 +33,174 @@ body .top-simple-bar {
   justify-content: flex-end !important;
   align-items: center !important;
   width: 100% !important;
-  z-index: 999999 !important;
+  z-index: 2000000 !important; /* HARUS PALING TINGGI agar menu dropdown tidak tertutup navbar */
   position: relative !important;
 }
 
 body .top-simple-content {
   width: 100% !important;
-  max-width: 1200px !important;
+  max-width: 1210px !important; /* Tambahkan sedikit ruang */
   margin: 0 auto !important;
   display: flex !important;
   justify-content: flex-end !important;
-  padding: 0 20px !important;
+  padding: 0 30px !important; /* Tambahkan padding samping agar tidak mepet layar */
+}
+
+.top-bar-right-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 40px !important; /* Perbesar jarak signifikan agar tidak mepet */
+  height: 100% !important;
+}
+
+/* === STYLING LANGUAGE SWITCHER === */
+.language-switcher-dropdown {
+  position: relative !important;
+}
+
+.language-switcher-dropdown .lang-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffffb1 !important;
+  padding: 2px 12px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  line-height: 28px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+}
+
+.language-switcher-dropdown:hover .lang-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.language-switcher-dropdown .lang-list {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important; /* POSISI TENGAH */
+  transform: translateX(-50%) !important; /* KUNCI RATA TENGAH */
+  margin-top: 8px !important;
+  background: #ffffff !important;
+  width: max-content !important;
+  min-width: 120px !important;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
+  border-top: 4px solid #0d6efd !important;
+  border-radius: 8px !important;
+  z-index: 1000001 !important;
+  padding: 8px 0 !important;
+}
+
+/* ANTI-GAP BRIDGE */
+.language-switcher-dropdown .lang-list::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 35px !important;
+  background: transparent !important;
+}
+
+.language-switcher-dropdown:hover .lang-list {
+  display: block !important;
+}
+
+.language-switcher-dropdown .lang-list li {
+  display: block !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.language-switcher-dropdown .lang-list li a {
+  display: block !important;
+  padding: 10px 18px !important;
+  color: #475569 !important; /* Warna lebih soft */
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+}
+
+.language-switcher-dropdown .lang-list li a:hover {
+  background: #f8fafc !important;
+  color: #0d6efd !important;
+  border-left: 3px solid #0d6efd !important;
+  padding-left: 20px !important; /* Efek geser dikit */
+}
+
+.language-switcher-dropdown .lang-list li.active a {
+  color: #0d6efd !important;
+  font-weight: 600 !important;
+  background: rgba(13, 110, 253, 0.05) !important;
 }
 
 body .top-simple-bar .pkp_navigation_user {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
   margin: 0 !important;
   padding: 0 !important;
+  height: 40px !important;
 }
 
 body .top-simple-bar .pkp_navigation_user > li {
   position: relative !important;
-  display: inline-block !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 body .top-simple-bar .pkp_navigation_user > li > a {
-  color: #ffffffb1 !important;
-  font-weight: 600 !important;
-  padding: 5px 10px !important;
-  font-size: 0.85rem !important;
+  color: #d1d5db !important; /* Warna abu abu terang yang elegan */
+  font-weight: 600 !important; /* Dikurangi dari 700 agar tidak ketebalan */
+  font-size: 0.85rem !important; /* Dikurangi dari 0.95rem agar tidak kegedean */
+  padding: 0 10px !important; 
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
   text-decoration: none !important;
-  display: block !important;
-  line-height: 30px !important;
+  transition: all 0.3s ease !important; /* Hover smooth untuk teks admin */
 }
 
-body .top-simple-bar .pkp_navigation_user > li > a:hover {
+body .top-simple-bar .pkp_navigation_user > li:hover > a {
   color: #ffffff !important;
 }
 
-// dropdown user
+/* Dropdown User */
 body .top-simple-bar .pkp_navigation_user > li > ul {
   display: none !important;
   position: absolute !important;
   top: 100% !important;
-  right: 0 !important;
-  left: auto !important;
+  left: 50% !important; /* POSISI TENGAH */
+  transform: translateX(-50%) !important; /* KUNCI TENGAH */
+  margin-top: 8px !important;
   background: #ffffff !important;
-  min-width: 180px !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
-  border-top: 3px solid #0d6efd !important;
-  z-index: 99999 !important;
-  border-radius: 0 0 5px 5px !important;
-  padding: 5px 0 !important;
+  width: max-content !important;
+  min-width: 140px !important;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
+  border-top: 4px solid #0d6efd !important;
+  border-radius: 8px !important;
+  padding: 8px 0 !important;
+  z-index: 1000001 !important;
+}
+
+/* ANTI-GAP BRIDGE USER */
+body .top-simple-bar .pkp_navigation_user > li > ul::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 35px !important;
+  background: transparent !important;
 }
 
 body .top-simple-bar .pkp_navigation_user > li:hover > ul {
@@ -98,28 +214,53 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li {
 
 body .top-simple-bar .pkp_navigation_user > li > ul > li > a {
   display: block !important;
-  padding: 8px 15px !important;
-  color: #333 !important;
+  padding: 10px 18px !important;
+  color: #475569 !important;
   text-decoration: none !important;
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important; /* Dikurangi agar ramping */
+  font-weight: 500 !important; /* Tidak terlalu tebal */
   white-space: nowrap !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
 }
 
 body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
-  background: #f0f8ff !important;
+  background: #f8fafc !important;
   color: #0d6efd !important;
+  border-left: 3px solid #0d6efd !important;
+  padding-left: 20px !important;
 }
 
-// header dan branding
+/* === 3. HEADER WRAPPER (LOGO AREA) === */
 .pkp_head_wrapper {
   background: #ffffff !important;
-  padding: 13px 0 !important; /* Dikecilin dari 15px ke 5px */
-  border-bottom: none !important;
-  margin-top: 0 !important; /* Dihapus jarak atasnya (dari 20px jadi 0) */
+  padding: 15px 0 !important;
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+/* === 4. STICKY NAVBAR (GLOBAL STICKY) === */
+.pkp_structure_page {
+  overflow: visible !important;
+  display: block !important;
+}
+
+.custom-main-navbar {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  z-index: 99999 !important; /* Di bawah Top Bar biru, tapi di atas konten */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  padding: 10px 0 !important;
+  border-bottom: 3px solid #0d6efd !important;
+  transition: all 0.3s ease !important;
 }
 
 .branding-wrapper {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 15px;
   max-width: 1200px !important;
@@ -127,13 +268,12 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   padding: 0 20px !important;
 }
 
-/* Kecilkan Kotak Logo */
+/* Styling Logo */
 .journal-icon-box {
-  width: 45px !important; /* Dikecilin dari 65px */
-  height: 45px !important; /* Dikecilin dari 65px */
-  font-size: 20px !important; /* Font inisial juga dikecilin */
+  width: 45px !important;
+  height: 45px !important;
+  font-size: 20px !important;
   border-radius: 6px !important;
-  /* ... sisa kode warna biarkan sama ... */
   background-color: #0088cc;
   color: #ffffff;
   display: flex;
@@ -144,10 +284,9 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
 }
 
-/* Kecilkan Font Judul Jurnal */
+/* Styling Judul Jurnal */
 .custom-journal-title {
-  font-size: 24px !important; /* Dikecilin dari 34px */
-  /* ... sisa kode sama ... */
+  font-size: 24px !important;
   font-family: "Merriweather", serif !important;
   font-weight: 900 !important;
   color: #0f172a !important;
@@ -161,7 +300,7 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   color: #64748b !important;
 }
 
-// navbar menu utama
+/* === 5. NAVBAR MENU UTAMA === */
 .pkp_site_nav_menu {
   background: transparent !important;
   margin-top: 0 !important;
@@ -198,9 +337,8 @@ ul.pkp_navigation_primary > li {
 }
 
 ul.pkp_navigation_primary > li > a {
-  padding: 8px 15px !important; /* Dikecilin dari 10px 18px */
-  font-size: 0.8rem !important; /* Font dikit lebih kecil */
-  /* ... sisa kode sama ... */
+  padding: 8px 15px !important;
+  font-size: 0.8rem !important;
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
@@ -227,7 +365,7 @@ ul.pkp_navigation_primary > li:has(ul) > a::after {
   height: 0 !important;
   border-left: 4px solid transparent !important;
   border-right: 4px solid transparent !important;
-  border-top: 5px solid #94a3b8 !important; /* Panah Bawah */
+  border-top: 5px solid #94a3b8 !important;
   margin-left: 6px !important;
   transition:
     transform 0.3s ease,
@@ -243,26 +381,25 @@ ul.pkp_navigation_primary > li > ul {
   display: none !important;
   position: absolute !important;
   top: 100% !important;
-  left: 0 !important;
-  margin-top: 10px !important;
+  left: 50% !important; /* CENTER ALIGN */
+  transform: translateX(-50%) !important; /* CENTER ALIGN */
+  margin-top: 8px !important; /* Spasi melayang */
   background: #ffffff !important;
-  min-width: 240px !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
-  border: 1px solid #f1f5f9 !important;
-  border-top: 3px solid #0d6efd !important;
-  border-radius: 0 0 12px 12px !important;
-  z-index: 9999 !important;
-  padding: 10px 0 !important;
-  animation: slideUpFade 0.3s ease-out !important;
+  width: max-content !important; /* RAMPING */
+  min-width: 140px !important;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
+  border-radius: 8px !important;
+  z-index: 10000 !important;
+  padding: 8px 0 !important;
 }
 
 ul.pkp_navigation_primary > li > ul::before {
   content: "" !important;
   position: absolute !important;
-  top: -15px !important;
+  top: -30px !important;
   left: 0 !important;
   width: 100% !important;
-  height: 20px !important;
+  height: 35px !important;
   background: transparent !important;
 }
 
@@ -270,22 +407,32 @@ ul.pkp_navigation_primary > li:hover > ul {
   display: block !important;
 }
 
+ul.pkp_navigation_primary > li > ul > li {
+  display: block !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+ul.pkp_navigation_primary > li > ul > li:last-child {
+  border-bottom: none !important;
+}
+
 ul.pkp_navigation_primary > li > ul > li > a {
   display: block !important;
-  padding: 10px 25px !important;
+  padding: 10px 18px !important;
   color: #475569 !important;
-  font-size: 0.9rem !important;
-  text-decoration: none !important;
+  font-size: 0.8rem !important; /* Samakan ukuran kecil */
   font-weight: 500 !important;
+  text-decoration: none !important;
   border-left: 3px solid transparent !important;
   transition: all 0.2s ease !important;
+  text-align: left !important;
 }
 
 ul.pkp_navigation_primary > li > ul > li > a:hover {
   background: #f8fafc !important;
   color: #0d6efd !important;
   border-left-color: #0d6efd !important;
-  padding-left: 30px !important;
+  padding-left: 20px !important; /* Efek dorong dikit */
 }
 
 @keyframes slideUpFade {
@@ -299,7 +446,7 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   }
 }
 
-// bagian search
+/* === 6. SEARCH BAR === */
 .pkp_navigation_search_wrapper a,
 .pkp_search {
   box-shadow: none !important;
@@ -327,11 +474,10 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   transform: translateY(-3px) !important;
 }
 
-// hero banner
+/* === 7. HERO BANNER === */
 .custom-hero-banner {
-  min-height: 400px !important; /* Kurangi tingginya (tadinya 480px) */
-  padding: 60px 0 !important; /* Kurangi padding atas-bawah (tadinya 90px) */
-  /* ... sisa kode background dll biarkan ... */
+  min-height: 400px !important;
+  padding: 60px 0 !important;
   position: relative !important;
   display: flex !important;
   align-items: center !important;
@@ -420,8 +566,8 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
 
 .btn-main:hover {
   background: #0b5ed7 !important;
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5) !important;
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4) !important;
 }
 
 .btn-outline-hero {
@@ -435,8 +581,8 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   background: #ffffff !important;
   color: #0d6efd !important;
   border-color: #ffffff !important;
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3) !important;
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important;
 }
 
 @keyframes fadeIn {

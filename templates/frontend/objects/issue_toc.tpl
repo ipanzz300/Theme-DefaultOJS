@@ -6,7 +6,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief View of an Issue which displays a full table of contents.
- * FIXED: Published Date moved UP immediately after Description
+ * FIXED: Handling for Empty Description & Layout Issues
  *}
 {if !$heading}
 	{assign var="heading" value="h2"}
@@ -19,6 +19,7 @@
 {elseif $heading == "h5"}
 	{assign var="articleHeading" value="h6"}
 {/if}
+
 <div class="obj_issue_toc">
 
 	{* Indicate if this is only a preview *}
@@ -26,10 +27,14 @@
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
-	{* Issue introduction area above articles *}
-	<div class="heading">
+	{* --- LOGIC: Cek apakah deskripsi benar-benar ada isinya (bukan cuma spasi) --- *}
+	{assign var="rawDesc" value=$issue->getLocalizedDescription()}
+	{assign var="cleanDesc" value=$rawDesc|strip_tags|trim}
 
-		
+	{* Issue introduction area above articles *}
+	{* Tambahkan class 'no-description' jika cleanDesc kosong *}
+	<div class="heading {if !$cleanDesc}no-description{/if}">
+
 		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 		{if $issueCover}
 			<div class="cover">
@@ -41,13 +46,14 @@
 		{/if}
 
 		{* 2. DESCRIPTION *}
-		{if $issue->hasDescription()}
+		{* Hanya tampilkan div description jika benar-benar ada teksnya *}
+		{if $cleanDesc}
 			<div class="description">
-				{$issue->getLocalizedDescription()|strip_unsafe_html}
+				{$rawDesc|strip_unsafe_html}
 			</div>
 		{/if}
 
-		
+		{* 3. PUBLISHED DATE *}
 		{if $issue->getDatePublished()}
 			<div class="published">
 				<span class="label">
@@ -59,45 +65,35 @@
 			</div>
 		{/if}
 
-		
+		{* 4. PUB ID & DOI *}
 		{foreach from=$pubIdPlugins item=pubIdPlugin}
 			{assign var=pubId value=$issue->getStoredPubId($pubIdPlugin->getPubIdType())}
 			{if $pubId}
 				{assign var="resolvingUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
 				<div class="pub_id {$pubIdPlugin->getPubIdType()|escape}">
-					<span class="type">
-						{$pubIdPlugin->getPubIdDisplayType()|escape}:
-					</span>
+					<span class="type">{$pubIdPlugin->getPubIdDisplayType()|escape}:</span>
 					<span class="id">
-						{if $resolvingUrl}
-							<a href="{$resolvingUrl|escape}">
-								{$resolvingUrl}
-							</a>
-						{else}
-							{$pubId}
-						{/if}
+						{if $resolvingUrl}<a href="{$resolvingUrl|escape}">{$resolvingUrl}</a>{else}{$pubId}{/if}
 					</span>
 				</div>
 			{/if}
 		{/foreach}
 
-		
 		{assign var=doiObject value=$issue->getData('doiObject')}
 		{if $doiObject}
 			{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
 			<div class="pub_id doi">
-				<span class="type">
-					DOI:
-				</span>
+				<span class="type">DOI:</span>
 				<span class="id">
-					<a href="{$doiUrl|escape}">
-						{$doiUrl}
-					</a>
+					<a href="{$doiUrl|escape}">{$doiUrl}</a>
 				</span>
 			</div>
 		{/if}
 
-	</div>{* Full-issue galleys *}
+	</div> 
+	{* --- END HEADING --- *}
+
+	{* Full-issue galleys *}
 	{if $issueGalleys}
 		<div class="galleys">
 			<{$heading} id="issueTocGalleyLabel">
@@ -115,22 +111,29 @@
 
 	{* Articles *}
 	<div class="sections">
-	{foreach name=sections from=$publishedSubmissions item=section}
-		<div class="section">
-		{if $section.articles}
-			{if $section.title}
-				<{$heading}>
-					{$section.title|escape}
-				</{$heading}>
+	{if $publishedSubmissions|@count > 0}
+		{foreach name=sections from=$publishedSubmissions item=section}
+			<div class="section">
+			{if $section.articles}
+				{if $section.title}
+					<{$heading}>
+						{$section.title|escape}
+					</{$heading}>
+				{/if}
+				<ul class="cmp_article_list articles">
+					{foreach from=$section.articles item=article}
+						<li>
+							{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
+						</li>
+					{/foreach}
+				</ul>
 			{/if}
-			<ul class="cmp_article_list articles">
-				{foreach from=$section.articles item=article}
-					<li>
-						{include file="frontend/objects/article_summary.tpl" heading=$articleHeading}
-					</li>
-				{/foreach}
-			</ul>
-		{/if}
+			</div>
+		{/foreach}
+	{else}
+		<div class="no_articles_notice">
+			<p>{translate key="issue.noArticles"}</p>
 		</div>
-	{/foreach}
-	</div></div>
+	{/if}
+	</div>
+</div>

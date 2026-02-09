@@ -182,6 +182,7 @@ body.pkp_page_issue.pkp_op_archive
   margin-bottom: 60px !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   transition: color 0.3s ease !important;
@@ -270,5 +271,43 @@ body.pkp_page_issue.pkp_op_archive
   .page_issue_archive h1::after {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+/* === ARCHIVE ZERO STATE === */
+.archive-zero-state {
+  margin: 40px auto !important;
+  max-width: 600px !important;
+  padding: 60px 40px !important;
+  text-align: center !important;
+  background: #ffffff !important;
+  border: 2px dashed #cbd5e1 !important;
+  border-radius: 20px !important;
+
+  .zero-state-icon {
+    width: 64px !important;
+    height: 64px !important;
+    margin: 0 auto 20px !important;
+  }
+
+  .zero-title {
+    font-family: "Merriweather", serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 15px !important;
+    text-align: center !important; /* Force center since h1 might be aligned differently */
+  }
+
+  .zero-desc {
+    font-size: 1rem !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .zero-actions {
+    display: flex !important;
+    justify-content: center !important;
   }
 }

@@ -1,115 +1,225 @@
 /**
- * @file plugins/themes/default/styles/sidebar.less
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @brief Styles for the sidebar blocks
- *
+ * CUSTOM SIDEBAR (VERSI FINAL - TENGAH)
+ * Logo Rata Tengah, Kotak Putih, Rapi.
  */
 
+.pkp_structure_sidebar {
+  /* Ini gak perlu padding top lagi karena nanti kita atur di indexSite */
+  padding-top: 0 !important;
+}
+
+/* 1. KOTAK BLOCK (CARD) */
 .pkp_block {
-	padding: @triple @double;
-	font-size: @font-base;
-	line-height: @line-base;
-
-	.title {
-		display: block;
-		margin-bottom: @base;
-		margin-top: 0;
-		font-family: @font-heading;
-		font-size: @font-bump;
-		font-weight: @bold;
-		line-height: @line-bump;
-		color: @text-light;
-	}
-
-	.content {
-
-		 ul {
-			&:extend(.pkp_unstyled_list);
-
-			li {
-				line-height: @line-base;
-				padding: @half 0;
-			}
-		}
-
-		p {
-			line-height: @line-base-large;
-
-			&:first-child {
-				margin-top: 0;
-			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	@media(min-width: @screen-desktop) {
-		padding: @triple;
-	}
+  background: #ffffff !important;
+  padding: 30px 20px !important; /* Padding kanan-kiri pas */
+  margin-bottom: 25px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(13, 110, 253, 0.1) !important;
+  box-shadow: 0 5px 25px rgba(13, 110, 253, 0.05) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
 }
 
-// Browse sidebar block
-.block_browse {
-	font-size: @font-sml;
-
-	.has_submenu {
-		margin-top: @double;
-		font-size: @font-sml;
-		font-weight: @bold;
-		color: @text-light;
-
-		ul {
-			margin-top: calc(~"@{half} - 1px"); // account for border
-			padding-top: @half;
-			font-weight: @normal;
-		}
-	}
-
-	.is_sub {
-		margin-left: @base;
-	}
-
-	.current a {
-		padding-left: 0.5em;
-		border-left: 4px solid @bg-border-color;
-		color: @text-light;
-		cursor: text;
-	}
+/* Garis Hiasan Biru di Atas */
+.pkp_block::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
 }
 
-.block_information,
-.block_language_toggle {
-
-	a {
-		font-size: @font-sml;
-	}
+.pkp_block:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 40px rgba(13, 110, 253, 0.15) !important;
 }
 
-.block_make_submission {
+/* 2. JUDUL BLOCK (RATA TENGAH LAGI) */
+.pkp_block .title {
+  font-family: "Merriweather", serif !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 2px dashed #e2e8f0 !important;
 
-	a {
-		&:extend(.cmp_button);
-	}
+  /* BALIKIN KE TENGAH */
+  text-align: center !important;
+  border-left: none !important;
+  padding-left: 0 !important;
 }
 
-.block_subscription {
+/* 3. ISI KONTEN (LOGO DI TENGAH) */
+.pkp_block .content {
+  text-align: center !important; /* Logo Otomatis ke Tengah */
+  display: block !important;
+}
 
-	.subscription_name {
-		margin-bottom: 0;
-		font-weight: @bold;
-	}
+/* Aturan Logo */
+.pkp_block .content img {
+  max-width: 80% !important;
+  height: auto !important;
+  margin-bottom: 15px !important;
+  border-radius: 6px !important;
+  padding: 5px !important;
 
-	.subscription_membership {
-		margin-top: 0;
-	}
+  /* Efek Awal: Sedikit Transparan & Hitam Putih */
+  filter: grayscale(100%) !important;
+  opacity: 0.7 !important;
+  transition: all 0.4s ease !important;
+}
+
+/* Efek Pas Disorot: Jadi Berwarna & Jelas */
+.pkp_block .content img:hover {
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
+  transform: scale(1.08) !important;
+  background: #f8fafc !important; /* Kasih background tipis pas hover */
+}
+
+/* 4. LANGUAGE BLOCK SPECIFIC */
+.block_language {
+  .content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  li {
+    width: 100% !important;
+  }
+
+  a {
+    display: block !important;
+    padding: 10px 15px !important;
+    background: #f8fbff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.2s ease !important;
+    text-align: left !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  a::before {
+    content: "🌐" !important;
+    margin-right: 10px !important;
+    filter: grayscale(100%) !important;
+    opacity: 0.7 !important;
+  }
+
+  a:hover {
+    background: #0d6efd !important;
+    color: #ffffff !important;
+    border-color: #0d6efd !important;
+    transform: translateX(5px) !important;
+  }
+
+  a:hover::before {
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;
+  }
+
+  /* Current Active Language */
+  a.is_active {
+    background: #0d6efd !important;
+    color: #ffffff !important;
+    border-color: #0d6efd !important;
+  }
+}
+
+/* === 5. CUSTOM BLOCK WRAPPER (FOR DASHBOARD) === */
+/* Styling khusus agar tidak nabrak dengan block standar OJS */
+.custom-block-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 15px !important;
+  width: 100% !important;
+
+  /* Banner Besar (Sinta dsb) */
+  .custom-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    margin-bottom: 5px !important;
+    filter: none !important; /* Pastikan tidak hitam putih */
+    opacity: 1 !important;
+  }
+
+  /* Judul Manual Premium dengan Titik Biru */
+  .custom-sub-title {
+    font-family: "Merriweather", serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 900 !important;
+    color: #1e293b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    width: 100% !important;
+    margin: 10px 0 20px 0 !important;
+    padding-bottom: 12px !important;
+    border-bottom: 2px solid #0d6efd !important;
+    position: relative !important;
+    text-align: center !important;
+
+    &::after {
+      content: "" !important;
+      position: absolute !important;
+      bottom: -6px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: 10px !important;
+      height: 10px !important;
+      background: #0d6efd !important;
+      border-radius: 50% !important;
+      border: 2px solid #ffffff !important;
+    }
+  }
+
+  /* Daftar Logo (Yapindo, Scholar, dsb) */
+  .custom-logo-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+
+    a {
+      display: inline-block !important;
+      transition: transform 0.3s ease !important;
+      
+      &:hover {
+        transform: scale(1.1) !important;
+      }
+
+      img {
+        max-width: 160px !important; /* Ukuran ideal logo sidebar */
+        width: 80% !important;
+        height: auto !important;
+        filter: none !important; /* Warna asli */
+        opacity: 1 !important;
+        margin: 0 auto !important;
+      }
+    }
+  }
 }

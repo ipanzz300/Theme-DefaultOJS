@@ -1,5 +1,5 @@
 /* ==========================================================
-   STYLE HALAMAN ISSUE & ARCHIVE (FINAL FIX)
+   STYLE HALAMAN ISSUE & ARCHIVE (FULL CODE - FINAL)
    ========================================================== */
 
 .pkp_page_issue .page_issue {
@@ -14,7 +14,6 @@
   max-width: 100% !important;
   text-align: left !important;
   justify-content: flex-start !important;
-  /* Padding kiri 70px biasanya sejajar dengan Logo Navbar OJS standar */
   padding: 15px 70px !important;
   margin-top: 0 !important;
   margin-bottom: 20px !important;
@@ -22,7 +21,7 @@
   font-family: "Inter", sans-serif !important;
   color: #64748b !important;
   border-bottom: 1px solid #e2e8f0 !important;
-  border-radius: 0 !important; /* Full width, jadi radius 0 */
+  border-radius: 0 !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
 }
 
@@ -47,14 +46,14 @@
   position: relative !important;
   z-index: 2 !important;
 
-  /* === SETTINGAN POTONG RAPI === */
-  max-width: 1100px !important; /* Batasi lebar */
+  /* === SETTINGAN ALIGNMENT === */
+  max-width: 1100px !important;
   width: 90% !important;
-  margin-left: auto !important; /* Auto kiri */
-  margin-right: auto !important; /* Auto kanan biar tengah */
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* 3. KOTAK DESKRIPSI (Dipotong Rapi di Tengah) */
+/* 3. KOTAK DESKRIPSI (Heading) */
 .pkp_page_issue .heading {
   display: block !important;
   position: relative !important;
@@ -66,8 +65,8 @@
   overflow: visible !important;
   transition: all 0.3s ease !important;
 
-  /* === SETTINGAN POTONG RAPI === */
-  max-width: 1100px !important; /* Batasi lebar lurus sama judul */
+  /* === SETTINGAN ALIGNMENT === */
+  max-width: 1100px !important;
   width: 90% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -84,6 +83,17 @@
   clear: both;
 }
 
+@keyframes masukGelinding {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
 .pkp_page_issue .heading .cover {
   float: left !important;
   width: 250px !important;
@@ -92,18 +102,13 @@
   background: #ffffff !important;
   padding: 8px !important;
   border-radius: 16px !important;
-  opacity: 0 !important;
-  transform: translateX(-300px) rotate(-360deg) !important;
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  box-shadow: none !important;
+  
+  animation: masukGelinding 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+  
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
   position: relative !important;
   z-index: 10 !important;
-}
-
-.pkp_page_issue .heading:hover .cover {
-  opacity: 1 !important;
-  transform: translateX(0) rotate(0deg) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+  opacity: 1; 
 }
 
 .pkp_page_issue .heading .cover img {
@@ -114,6 +119,13 @@
   border: 1px solid #f1f5f9 !important;
 }
 
+/* Hapus efek hover agar tidak bentrok */
+.pkp_page_issue .heading:hover .cover {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* === BAGIAN DESKRIPSI TEXT === */
 .toc-wrapper .heading > .description {
   margin-left: 300px !important;
   margin-bottom: 0 !important;
@@ -162,14 +174,14 @@
   color: #64748b !important;
 }
 
-/* 4. WRAPPER ARTIKEL (Dipotong Rapi biar lurus sama atasnya) */
+/* 4. WRAPPER ARTIKEL (Grid List) */
 .pkp_page_issue .sections .section {
   border-top: none !important;
 
   /* === SETTINGAN ALIGNMENT === */
-  max-width: 1100px !important; /* Samakan lebar dengan header */
+  max-width: 1100px !important;
   width: 90% !important;
-  margin: 0 auto !important; /* Center */
+  margin: 0 auto !important;
 }
 
 .pkp_page_issue .sections .section h2 {
@@ -180,7 +192,6 @@
   color: #0f172a !important;
   margin-top: 10px !important;
   margin-bottom: 20px !important;
-  /* Reset padding krn wrapper udh center */
   padding-left: 0 !important;
   padding-right: 0 !important;
   position: relative !important;
@@ -195,13 +206,12 @@
   background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
 }
 
-/* BAGIAN GRID */
 .pkp_page_issue .sections .section .articles {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   grid-auto-rows: 1fr !important;
   gap: 25px !important;
-  padding: 0 !important; /* Hapus padding wrapper lama */
+  padding: 0 !important;
   list-style: none !important;
   clear: both !important;
   align-items: stretch !important;
@@ -212,7 +222,7 @@
   height: 100% !important;
 }
 
-/* 5. ITEM ARTIKEL (TIDAK DIUBAH SAMA SEKALI DARI KODE KAMU) */
+/* 5. ITEM ARTIKEL (Style Card) */
 .obj_article_summary {
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
   border: 1px solid #e2e8f0 !important;
@@ -249,6 +259,7 @@
   min-height: 4.5em !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -270,6 +281,7 @@
   min-height: 2.8em !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
 }
@@ -304,8 +316,8 @@
   display: none !important;
 }
 
+/* === RESPONSIF MOBILE === */
 @media (max-width: 768px) {
-  /* Di Mobile juga dipotong rapi tapi agak lebar */
   .pkp_page_issue h1,
   .pkp_page_issue .heading,
   .pkp_page_issue .sections .section {
@@ -355,6 +367,7 @@
   }
 }
 
+/* Cleanup Default OJS Borders */
 .pkp_page_issue .sections .section,
 .pkp_page_issue .obj_issue_toc .section,
 .pkp_page_issue .item.section {
@@ -382,9 +395,7 @@
   background-color: transparent !important;
 }
 
-/* ======================================================== */
-/* Styling Info Tambahan (Hal, View, Download) */
-/* ======================================================== */
+
 .obj_article_summary {
   .info-tambahan {
     display: flex;
@@ -424,5 +435,108 @@
 
   .galleys_links {
     margin-top: 0 !important;
+  }
+}
+
+.obj_article_summary {
+  margin-top: 0 !important;
+}
+
+/* === ISSUE ZERO STATE === */
+.issue-zero-state {
+  margin: 40px auto !important;
+  max-width: 700px !important;
+  padding: 80px 40px !important;
+  text-align: center !important;
+  background: #ffffff !important;
+  border: none !important; /* REMOVED DASHED LINE */
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  
+  /* RGB LINE INSIDE */
+  position: relative !important;
+  overflow: hidden !important;
+
+  &::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 6px !important;
+    background: linear-gradient(90deg, #0d6efd, #00d4ff, #0d6efd) !important;
+    background-size: 200% auto !important;
+    animation: flowGradient 3s linear infinite !important;
+    z-index: 10 !important;
+  }
+
+  .zero-state-icon {
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 auto 30px !important;
+    color: #94a3b8 !important;
+  }
+
+  .zero-title {
+    font-family: "Merriweather", serif !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #1e293b !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .zero-desc {
+    font-size: 1.1rem !important;
+    color: #64748b !important;
+    line-height: 1.7 !important;
+    margin-bottom: 40px !important;
+    max-width: 500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .zero-actions {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .btn-main {
+    background: #0d6efd !important;
+    color: #fff !important;
+    padding: 12px 28px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  }
+
+  .btn-main:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3) !important;
+  }
+
+  .btn-secondary-custom {
+    padding: 12px 28px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #fff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  }
+
+  .btn-secondary-custom:hover {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
   }
 }

@@ -74,20 +74,20 @@
 		{if $publication->getData('pages')}
 			<div class="item-info pages">
 				<span class="fa fa-file-text-o"></span>
-				<span>Hal. {$publication->getData('pages')|escape}</span>
+				<span>{translate key="plugins.themes.defaultOjs.article.pages"} {$publication->getData('pages')|escape}</span>
 			</div>
 		{/if}
 
 		{* B. Statistik VIEWS *}
 		<div class="item-info stats-views">
 			<span class="fa fa-eye"></span>
-			<span>{$article->getViews()|default:0} Views</span>
+			<span>{$article->getViews()|default:0} {translate key="plugins.themes.defaultOjs.article.views"}</span>
 		</div>
 
 		{* C. Statistik DOWNLOADS (Total) *}
 		<div class="item-info stats-downloads">
 			<span class="fa fa-download"></span>
-			<span>{$totalDownloads|default:0} Downloads</span>
+			<span>{$totalDownloads|default:0} {translate key="plugins.themes.defaultOjs.article.downloads"}</span>
 		</div>
 
 	</div>
