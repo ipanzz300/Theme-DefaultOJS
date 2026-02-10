@@ -191,3 +191,15 @@ msgstr "Dilihat"
 
 msgid "plugins.themes.defaultOjs.article.downloads"
 msgstr "Unduhan"
+
+msgid "plugins.block.information.link"
+msgstr "Informasi"
+
+msgid "navigation.infoForReaders"
+msgstr "Untuk Pembaca"
+
+msgid "navigation.infoForAuthors"
+msgstr "Untuk Penulis"
+
+msgid "navigation.infoForLibrarians"
+msgstr "Untuk Pustakawan"

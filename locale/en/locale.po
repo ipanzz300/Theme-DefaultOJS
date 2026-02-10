@@ -191,3 +191,15 @@ msgstr "Views"
 
 msgid "plugins.themes.defaultOjs.article.downloads"
 msgstr "Downloads"
+
+msgid "plugins.block.information.link"
+msgstr "Information"
+
+msgid "navigation.infoForReaders"
+msgstr "For Readers"
+
+msgid "navigation.infoForAuthors"
+msgstr "For Authors"
+
+msgid "navigation.infoForLibrarians"
+msgstr "For Librarians"

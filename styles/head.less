@@ -62,14 +62,15 @@ body .top-simple-content {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: #ffffffb1 !important;
-  padding: 2px 12px !important;
+  padding: 4px 16px !important;
   border-radius: 20px !important;
-  font-size: 11px !important;
-  line-height: 28px !important;
+  font-size: 13px !important;
+  line-height: normal !important;
+  min-height: 32px !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 10px !important;
   transition: all 0.3s ease !important;
   outline: none !important;
 }
@@ -304,8 +305,8 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
 .pkp_site_nav_menu {
   background: transparent !important;
   margin-top: 0 !important;
-  margin-left: 10px !important;
-  margin-right: 45px !important;
+  margin-left: 0 !important; /* Dihilangkan agar rata kiri container */
+  margin-right: 0 !important;
   border-bottom: none !important;
   padding-bottom: 0 !important;
   position: relative !important;
@@ -327,6 +328,7 @@ ul.pkp_navigation_primary {
   flex-wrap: wrap !important;
   gap: 8px !important;
   margin: 0 !important;
+  margin-left: -15px !important; /* Geser ke kiri untuk mengimbangi padding link pertama */
   padding: 0 !important;
 }
 
