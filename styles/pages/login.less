@@ -1,179 +1,177 @@
-/* 1. Mengatur jarak antar blok form (Jarak Email ke Password) */
-.page_login .fields > div {
-  width: 100% !important;
-  margin-bottom: 10px !important; /* SEBELUMNYA 25px (Diperkecil biar rapet) */
-}
-
-/* 2. Mengatur jarak judul (Label) ke kotak input */
-.page_login label {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 5px !important; /* SEBELUMNYA 10px */
-  font-weight: 700 !important;
-}
-
-/* 3. Mengatur jarak link "Forgot Password" biar ga kejauhan dari input password */
-.page_login .password a {
-  display: block !important;
-  text-align: center !important;
-  margin-top: 5px !important; /* SEBELUMNYA 10px */
-  font-weight: 600 !important;
-}
+/* ==========================================================
+   STYLE HALAMAN LOGIN (FINAL CONSISTENCY)
+   ========================================================== */
 
 .page_login {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+  background: #ffffff !important;
   padding: 60px 50px !important;
   border-radius: 20px !important;
-  box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
-  border: 1px solid rgba(13, 110, 253, 0.12) !important;
-  max-width: 600px !important;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e2e8f0 !important;
+  max-width: 500px !important;
   width: 95% !important;
   margin: 50px auto !important;
   position: relative !important;
   overflow: hidden !important;
 }
+
 .page_login::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(180deg, #0d6efd, #00d4ff);
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 6px !important;
+  height: 100% !important;
+  background: linear-gradient(180deg, #0d6efd, #00d4ff) !important;
 }
 
+/* --- JUDUL KONSISTEN --- */
 .page_login h1 {
   text-align: center !important;
-  font-size: 2.5rem !important;
-  font-weight: 900 !important;
-  margin-bottom: 10px !important;
-}
-.page_login h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  margin: 15px auto 30px;
-  background: linear-gradient(90deg, #0d6efd, #00d4ff);
-  border-radius: 10px;
+  font-family: "Merriweather", serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
 }
 
-.page_login .cmp_form {
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+/* Style untuk pesan 'Required fields' dan tanda bintang */
+.page_login p, .page_login .required {
+  color: #ef4444 !important;
+  font-size: 0.85rem !important;
+  text-align: center !important;
+  margin-bottom: 15px !important;
+  font-weight: 600 !important;
 }
-.page_login .fields {
+
+.page_login h1::after {
+  content: "" !important;
+  display: block !important;
+  width: 60px !important;
+  height: 4px !important;
+  margin: 15px auto 30px !important;
+  background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
+  border-radius: 10px !important;
+}
+
+.page_login .fields > div {
   width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+.page_login label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  font-size: 0.95rem !important;
 }
 
 .page_login input[type="text"],
 .page_login input[type="password"] {
   width: 100% !important;
-  padding: 15px 20px !important;
-  border-radius: 12px !important;
+  padding: 12px 18px !important;
+  border-radius: 10px !important;
   border: 1px solid #cbd5e1 !important;
-  font-size: 1.1rem !important;
-  text-align: center !important;
+  font-size: 1rem !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
 }
-.page_login input:focus {
-  outline: none !important;
-  border-color: #0d6efd !important;
-  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15) !important;
+
+.page_login .password a {
+  display: inline-block !important;
+  margin-top: 8px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #0d6efd !important;
 }
 
 .page_login .remember {
   width: 100% !important;
   display: flex !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   gap: 10px !important;
-  margin: 20px 0 30px !important;
-}
-.page_login .remember input {
-  width: 20px !important;
-  height: 20px !important;
-  accent-color: #0d6efd !important;
+  margin: 10px 0 25px !important;
 }
 
+/* --- TOMBOL KONSISTEN (SEJAJAR) --- */
 .page_login .buttons {
   width: 100% !important;
   display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  margin-top: 20px !important;
 }
-/* --- PERBAIKAN TOMBOL LOGIN --- */
+
 .page_login button.submit {
-  width: 100% !important;
-  height: 55px !important; /* Tinggi Tetap */
-  margin-bottom: 15px !important;
+  flex: 1 !important;
+  height: 50px !important;
   border-radius: 50px !important;
   background: linear-gradient(135deg, #0d6efd, #0056b3) !important;
   color: #fff !important;
   border: none !important;
   font-weight: 700 !important;
-  font-size: 1rem !important; /* Pastikan ukuran font sama */
+  font-size: 0.95rem !important;
   cursor: pointer !important;
-  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2) !important;
   transition: all 0.3s ease !important;
-
-  /* TEKNIK CENTERING BARU (FLEXBOX) */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 0 !important; /* Reset padding biar teks benar-benar di tengah */
-}
-
-/* --- PERBAIKAN TOMBOL REGISTER --- */
-.page_login a.register {
-  width: 100% !important;
-  height: 55px !important; /* Samakan tinggi dengan tombol Login */
-  background: transparent !important;
-  border: 2px solid #e2e8f0 !important;
-  color: #64748b !important;
-  border-radius: 50px !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important; /* Samakan ukuran font */
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
-
-  /* KUNCI SUPAYA LEBARNYA SAMA (Mencegah border bikin tombol melar) */
-  box-sizing: border-box !important;
-
-  /* TEKNIK CENTERING BARU (FLEXBOX) - Hapus line-height lama */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  line-height: normal !important;
-}
-
-/* Tambahan Efek Hover Register biar makin rapi */
-.page_login a.register:hover {
-  border-color: #0d6efd !important;
-  color: #0d6efd !important;
-  background-color: #f8fbff !important;
 }
 
 .page_login button.submit:hover {
-  opacity: 0.85 !important;
-  cursor: pointer !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3) !important;
+  opacity: 0.9 !important;
 }
+
+.page_login a.register {
+  flex: 1 !important;
+  height: 50px !important;
+  border: 2px solid #e2e8f0 !important;
+  color: #64748b !important;
+  background: #ffffff !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  text-decoration: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+}
+
 .page_login a.register:hover {
   border-color: #0d6efd !important;
   color: #0d6efd !important;
-  background-color: #f8fbff !important;
-}
-.page_login .pkp_form_error {
-  width: 100% !important;
-  text-align: center !important;
 }
 
+/* === MEDIA QUERIES (RESPONSIVE) === */
 @media (max-width: 768px) {
   .page_login {
-    padding: 40px 25px !important;
+    padding: 40px 30px !important;
+    margin: 30px auto !important;
+  }
+  .page_login h1 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page_login {
+    padding: 30px 20px !important;
+  }
+  .page_login .buttons {
+    flex-direction: column !important;
+  }
+  .page_login button.submit,
+  .page_login a.register {
+    width: 100% !important;
+    flex: none !important;
   }
 }

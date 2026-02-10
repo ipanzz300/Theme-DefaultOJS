@@ -3,7 +3,7 @@
 }
 
 .page_issue_archive {
-  background-color: #6dc2fe21 !important;
+  background-color: #ffffff !important;
   display: flex !important;
   flex-direction: column !important;
   min-height: 85vh !important;
@@ -274,40 +274,89 @@ body.pkp_page_issue.pkp_op_archive
   }
 }
 
-/* === ARCHIVE ZERO STATE === */
+/* === ARCHIVE ZERO STATE (DESKTOP PREMIUM) === */
 .archive-zero-state {
-  margin: 40px auto !important;
-  max-width: 600px !important;
+  margin: 60px auto !important;
+  max-width: 650px !important;
   padding: 60px 40px !important;
   text-align: center !important;
   background: #ffffff !important;
-  border: 2px dashed #cbd5e1 !important;
+  border: 1px solid #e2e8f0 !important; /* Ganti dari dashed ke solid */
   border-radius: 20px !important;
+  box-shadow: 0 15px 50px rgba(13, 110, 253, 0.05) !important;
+  position: relative !important;
+  overflow: hidden !important; /* MENGUNCI AGAR GARIS BIRU TIDAK OFFSIDE */
+}
 
-  .zero-state-icon {
-    width: 64px !important;
-    height: 64px !important;
-    margin: 0 auto 20px !important;
+/* Garis Aksen Atas yang Rapi */
+.archive-zero-state::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 6px !important;
+  background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
+}
+
+.archive-zero-state .zero-state-icon {
+  width: 80px !important;
+  height: 80px !important;
+  background: #f8fbff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 25px auto !important;
+  color: #64748b !important;
+  font-size: 2.5rem !important;
+  border: 1px solid #eef2ff !important;
+}
+
+.archive-zero-state .zero-title {
+  font-family: "Merriweather", serif !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+.archive-zero-state .zero-desc {
+  font-family: "Inter", sans-serif !important;
+  font-size: 1.1rem !important;
+  color: #64748b !important;
+  line-height: 1.7 !important;
+  margin-bottom: 35px !important;
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Tombol Aksi */
+.archive-zero-state .btn-main {
+  background: linear-gradient(135deg, #0d6efd, #0056b3) !important;
+  color: #fff !important;
+  padding: 14px 35px !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.archive-zero-state .btn-main:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .archive-zero-state {
+    padding: 40px 20px !important;
+    width: 90% !important;
   }
-
-  .zero-title {
-    font-family: "Merriweather", serif !important;
+  .archive-zero-state .zero-title {
     font-size: 1.5rem !important;
-    font-weight: 700 !important;
-    color: #1e293b !important;
-    margin-bottom: 15px !important;
-    text-align: center !important; /* Force center since h1 might be aligned differently */
-  }
-
-  .zero-desc {
-    font-size: 1rem !important;
-    color: #64748b !important;
-    line-height: 1.6 !important;
-    margin-bottom: 30px !important;
-  }
-
-  .zero-actions {
-    display: flex !important;
-    justify-content: center !important;
   }
 }
