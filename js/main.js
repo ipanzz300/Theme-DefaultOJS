@@ -14,41 +14,35 @@
 	if (typeof $.fn.dropdown !== 'undefined') {
 		var $nav = $('#navigationPrimary, #navigationUser'),
 		$submenus = $('ul', $nav);
+		
 		function toggleDropdowns() {
 			if (window.innerWidth > 992) {
+				// Desktop: Kill all JS intervention. Let CSS Hover rule.
+				$submenus.each(function() {
+					$(this).removeClass('dropdown-menu').removeAttr('aria-labelledby').css('display', '');
+					var $parent = $(this).siblings('a');
+					$parent.removeAttr('data-toggle').removeAttr('aria-haspopup').removeAttr('aria-expanded').removeAttr('id');
+					if ($parent.attr('data-original-href')) {
+						$parent.attr('href', $parent.attr('data-original-href'));
+					}
+				});
+				$('[data-toggle="dropdown"]').dropdown('dispose');
+			} else {
+				// Mobile: Enable Bootstrap Click
 				$submenus.each(function(i) {
 					var id = 'pkpDropdown' + i;
-					$(this)
-						.addClass('dropdown-menu')
-						.attr('aria-labelledby', id);
-					$(this).siblings('a')
-						.attr('data-toggle', 'dropdown')
-						.attr('aria-haspopup', true)
-						.attr('aria-expanded', false)
-						.attr('id', id)
-						.attr('href', '#');
+					$(this).addClass('dropdown-menu').attr('aria-labelledby', id).css('display', '');
+					var $parent = $(this).siblings('a');
+					if (!$parent.attr('data-original-href')) {
+						$parent.attr('data-original-href', $parent.attr('href'));
+					}
+					$parent.attr('data-toggle', 'dropdown').attr('aria-haspopup', true).attr('aria-expanded', false).attr('id', id).attr('href', '#');
 				});
 				$('[data-toggle="dropdown"]').dropdown();
-
-			} else {
-				$('[data-toggle="dropdown"]').dropdown('dispose');
-				$submenus.each(function(i) {
-					$(this)
-						.removeClass('dropdown-menu')
-						.removeAttr('aria-labelledby');
-					$(this).siblings('a')
-						.removeAttr('data-toggle')
-						.removeAttr('aria-haspopup')
-						.removeAttr('aria-expanded',)
-						.removeAttr('id')
-						.attr('href', '#');
-				});
 			}
 		}
 		window.onresize = toggleDropdowns;
-		$().ready(function() {
-			toggleDropdowns();
-		});
+		$(document).ready(toggleDropdowns);
 	}
 
 	// Toggle nav menu on small screens

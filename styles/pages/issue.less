@@ -539,4 +539,66 @@
     transform: scale(1.05) translateY(-2px) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
   }
+  .issue-zero-state .btn-main, 
+  .issue-zero-state .btn-secondary-custom {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+}
+
+/* ========================================================
+   KHUSUS TAMPILAN MOBILE (< 768px) - Issue View
+   ======================================================== */
+@media (max-width: 768px) {
+  .pkp_page_issue h1,
+  .pkp_page_issue .heading,
+  .pkp_page_issue .sections .section {
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .pkp_page_issue h1 {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    padding-top: 20px !important;
+  }
+  .pkp_page_issue .heading {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 20px !important;
+    padding-bottom: 25px !important;
+  }
+  .pkp_page_issue .heading .cover {
+    float: none !important;
+    margin: 0 auto !important;
+    max-width: 180px !important;
+  }
+  .pkp_page_issue .sections .section .articles {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .obj_article_summary .title a {
+    font-size: 1.1rem !important;
+  }
+  .issue-zero-state {
+    padding: 30px 15px !important;
+    width: 95% !important;
+  }
+  .issue-zero-state .zero-title {
+    font-size: 1.4rem !important;
+  }
+  .issue-zero-state .zero-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+  .issue-zero-state .btn-main, 
+  .issue-zero-state .btn-secondary-custom {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
 }

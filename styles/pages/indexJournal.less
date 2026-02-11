@@ -737,3 +737,111 @@
     background-position: 100% 50%;
   }
 }
+
+/* ========================================================
+   KHUSUS TAMPILAN MOBILE (< 768px) - Homepage
+   ======================================================== */
+@media (max-width: 768px) {
+  .current_issue,
+  .additional_content,
+  .homepage_announcements {
+    padding: 25px 20px !important;
+  }
+  
+  .toc-wrapper .heading {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 15px !important;
+  }
+  .toc-wrapper .cover {
+    margin: 0 auto !important;
+    max-width: 150px !important;
+  }
+  .toc-wrapper .current_issue_title {
+    margin-left: 0 !important;
+    font-size: 1.3rem !important;
+    justify-content: center !important;
+  }
+
+  /* 3 Steps Section Refinement */
+  .homepage_index .zero-state-section h2 {
+    font-size: 1.25rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 25px !important;
+    text-transform: uppercase !important;
+    color: #94a3b8 !important;
+  }
+
+  .zero-steps {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 30px 20px !important;
+    align-items: center !important;
+    background: #f8fbff !important;
+    border: 1px solid #eef2ff !important;
+    border-radius: 20px !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+  }
+
+  .step-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .step-icon-box {
+    margin: 0 !important;
+  }
+
+  .step-info {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .step-label {
+    margin-bottom: 5px !important;
+  }
+
+  .step-divider {
+    width: 40px !important; /* Horizontal line width */
+    height: 2px !important;
+    margin: 15px auto !important;
+    background: #e2e8f0 !important;
+  }
+
+  .step-text {
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    font-size: 0.95rem !important;
+    max-width: 200px !important;
+  }
+
+  .zero-actions {
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+    align-items: center !important;
+    margin-top: 30px !important;
+  }
+
+  .zero-actions .btn-main, 
+  .zero-actions .btn-secondary-custom {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-height: 50px !important;
+    height: auto !important; /* Allow height to grow for 2 lines */
+    padding: 12px 25px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    line-height: 1.2 !important;
+  }
+}

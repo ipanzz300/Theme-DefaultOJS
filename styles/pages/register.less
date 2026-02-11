@@ -134,9 +134,14 @@
   background: linear-gradient(135deg, #0d6efd, #0056b3) !important;
   color: #fff !important;
   border: none !important;
+  padding: 0 25px !important;
   font-weight: 700 !important;
   font-size: 0.95rem !important;
   cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2) !important;
   transition: all 0.3s ease !important;
 }
@@ -150,7 +155,8 @@
 .page_register .buttons a.login {
   flex: 1 !important;
   height: 50px !important;
-  border: 2px solid #e2e8f0 !important;
+  padding: 0 25px !important;
+  border: 1px solid #cbd5e1 !important;
   color: #64748b !important;
   background: #ffffff !important;
   border-radius: 50px !important;
@@ -162,13 +168,12 @@
   align-items: center !important;
   box-sizing: border-box !important;
   transition: all 0.3s ease !important;
-  padding: 0 !important;
-  line-height: normal !important;
 }
 
 .page_register .buttons a.login:hover {
   border-color: #0d6efd !important;
   color: #0d6efd !important;
+  background: #f8fafc !important;
 }
 
 @media (max-width: 768px) {
@@ -185,11 +190,15 @@
 @media (max-width: 600px) {
   .page_register .buttons {
     flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
   }
   .page_register .buttons button.submit,
   .page_register .buttons a.login {
     width: 100% !important;
     flex: none !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
   .page_register fieldset {
     padding: 15px !important;

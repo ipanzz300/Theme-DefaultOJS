@@ -127,7 +127,7 @@ msgid "plugins.themes.defaultOjs.zero.step1Label"
 msgstr "Akun"
 
 msgid "plugins.themes.defaultOjs.zero.step1Text"
-msgstr "Daftar & Login"
+msgstr "Daftar & Masuk"
 
 msgid "plugins.themes.defaultOjs.zero.step2Label"
 msgstr "Persiapan"
