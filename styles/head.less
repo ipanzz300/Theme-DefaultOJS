@@ -86,7 +86,7 @@ body .top-simple-content {
   top: 100% !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  margin-top: 6px !important;
+  margin-top: 10px !important; /* Samakan dengan user dropdown */
   background: #ffffff !important;
   width: max-content !important;
   min-width: 130px !important;
@@ -94,7 +94,7 @@ body .top-simple-content {
   border-top: 2px solid #0d6efd !important; /* Thinner border */
   border-radius: 8px !important;
   z-index: 1000001 !important;
-  padding: 5px 0 !important;
+  padding: 10px 0 !important; /* Samakan dengan user dropdown (8px) */
 }
 
 /* ANTI-GAP BRIDGE */
@@ -122,7 +122,8 @@ body .top-simple-content {
   padding: 10px 18px !important;
   color: #475569 !important; /* Warna lebih soft */
   text-decoration: none !important;
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important; /* Samakan dengan user dropdown (0.8rem) */
+  font-weight: 500 !important; /* Tambahkan weight agar mantap */
   white-space: nowrap !important;
   text-align: left !important;
   transition: all 0.2s ease !important;
@@ -169,15 +170,23 @@ body .top-simple-bar .pkp_navigation_user > li {
 }
 
 body .top-simple-bar .pkp_navigation_user > li > a {
-  color: #d1d5db !important; /* Warna abu abu terang yang elegan */
-  font-weight: 600 !important; /* Dikurangi dari 700 agar tidak ketebalan */
-  font-size: 0.85rem !important; /* Dikurangi dari 0.95rem agar tidak kegedean */
-  padding: 0 10px !important; 
+  color: #fff !important; /* Make it white for better visibility */
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  padding: 0 12px !important;
   display: flex !important;
   align-items: center !important;
   height: 40px !important;
   text-decoration: none !important;
-  transition: all 0.3s ease !important; /* Hover smooth untuk teks admin */
+  transition: all 0.3s ease !important;
+}
+
+body .top-simple-bar .pkp_navigation_user > li > a::before {
+  content: "\f2bd" !important; /* User circle icon */
+  font-family: "FontAwesome" !important;
+  margin-right: 8px !important;
+  font-size: 15px !important;
+  color: #38bdf8 !important; /* Bright blue for visibility */
 }
 
 body .top-simple-bar .pkp_navigation_user > li:hover > a {
@@ -196,7 +205,7 @@ body .top-simple-bar .pkp_navigation_user > li > ul {
   width: max-content !important;
   min-width: 140px !important;
   box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
-  border-top: 4px solid #0d6efd !important;
+  border-top: 2px solid #0d6efd !important; /* Synchronized with lang switcher */
   border-radius: 8px !important;
   padding: 8px 0 !important;
   z-index: 1000001 !important;

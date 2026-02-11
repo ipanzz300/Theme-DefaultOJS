@@ -1,214 +1,216 @@
-/* =========================================================
-   STYLING HALAMAN PENGUMUMAN (STYLE ALA PAGE ABOUT)
-   ========================================================= */
+/**
+ * ANNOUNCEMENTS PAGE - PREMIUM MINIMALIST DESIGN
+ * Consolidated & Collision-Proof Version
+ */
 
-/* 1. KARTU PEMBUNGKUS UTAMA (Halaman) */
+/* 1. CONTAINER UTAMA */
 .pkp_page_announcements,
 .page_announcements {
-  display: block !important;
-  visibility: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    padding: 60px 70px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid #f0f4f8 !important;
+    max-width: 1000px !important;
+    width: 92% !important;
+    margin: 40px auto !important;
+    position: relative !important;
+    overflow: hidden !important; /* Pastikan line RGB terpotong rapi sesuai radius */
+}
 
-  /* Background & Bayangan (Mirip About) */
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
-  padding: 60px 70px !important;
-  border-radius: 20px !important; /* Sudut melengkung */
-  box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
-  border: 1px solid rgba(13, 110, 253, 0.12) !important;
-
-  max-width: 1000px !important;
-  width: 90% !important;
-  margin: 40px auto !important;
-
-  /* PENTING: Supaya garis kiri tidak bocor keluar sudut */
-  position: relative !important;
-  overflow: hidden !important;
-
-  /* Animasi Smooth (Sama seperti About) */
-  transition: all 0.4s ease !important;
-  animation: fadeInContent 0.6s ease-out !important;
-
-  /* Efek Hover di Kartu Utama */
-  &:hover {
-    box-shadow: 0 15px 60px rgba(13, 110, 253, 0.12) !important;
-    transform: translateY(-3px) !important;
-  }
-
-  /* --- GARIS RGB DI KIRI (Fixed: Tidak akan keluar tepi) --- */
-  &::before {
+/* RGB Blue Line on the LEFT only */
+.pkp_page_announcements::before,
+.page_announcements::before {
     content: "" !important;
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 6px !important; /* Lebar garis */
+    width: 6px !important;
     height: 100% !important;
     background: linear-gradient(180deg, #0d6efd, #00d4ff, #0d6efd) !important;
     background-size: 100% 200% !important;
-    animation: flowVertical 3s ease-in-out infinite !important;
-    z-index: 10 !important;
-  }
-
-  /* --- HIASAN BULAT DI POJOK KANAN ATAS (Sama seperti About) --- */
-  &::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 150px !important;
-    height: 150px !important;
-    background: radial-gradient(
-      circle at top right,
-      rgba(13, 110, 253, 0.05) 0%,
-      transparent 70%
-    ) !important;
-    pointer-events: none !important;
-  }
-
-  /* Judul Halaman "Announcements" */
-  h1 {
-    font-family: "Merriweather", serif !important;
-    font-size: 2.5rem !important;
-    font-weight: 900 !important;
-    color: #0f172a !important;
-    margin-left: 15px !important; /* Geser dikit biar ga nempel garis kiri */
-    margin-bottom: 35px !important;
-    padding-bottom: 20px !important;
-    position: relative !important;
-    border-bottom: 2px solid #e2e8f0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-
-    /* Garis kecil di bawah judul */
-    &::after {
-      content: "" !important;
-      display: block !important;
-      width: 120px !important;
-      height: 4px !important;
-      position: absolute;
-      bottom: -2px !important;
-      left: 0 !important;
-      border-radius: 10px !important;
-      animation: expandWidth 1s ease-out !important;
-    }
-  }
+    animation: flowVertical 5s linear infinite !important;
+    z-index: 1 !important;
 }
 
-/* 2. STYLING ITEM PENGUMUMAN (LIST DI DALAMNYA) */
+@keyframes flowVertical {
+    0% { background-position: 50% 0%; }
+    100% { background-position: 50% 200%; }
+}
+
+/* 2. TYPOGRAPHY */
+.pkp_page_announcements h1,
+.page_announcements h1 {
+    font-family: "Inter", sans-serif !important;
+    font-size: 2.22rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 20px 0 !important;
+    padding-bottom: 15px !important;
+    border-bottom: 2px solid #f1f5f9 !important;
+}
+
+.pkp_page_announcements .announcements_introduction {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    color: #64748b !important;
+    margin-bottom: 40px !important;
+}
+
+/* 3. CARD ANNOUNCEMENT SUMMARY */
 .obj_announcement_summary {
-  position: relative !important;
-  margin-bottom: 20px !important;
-  padding: 25px 30px !important; /* Padding enak dilihat */
+    background: #ffffff !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    border: 1px solid #f1f5f9 !important;
+    margin-bottom: 20px !important;
+    
+    /* Transition & Interactivity */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    display: block !important;
+    overflow: visible !important;
+    z-index: 2 !important;
+    pointer-events: auto !important;
+}
 
-  border-radius: 12px !important;
-  background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
+/* HOVER EFFECT (Sesuai Gaya 'About the Journal') */
+.obj_announcement_summary:hover {
+    background: #ffffff !important;
+    border-color: rgba(13, 110, 253, 0.4) !important;
+    box-shadow: 0 15px 45px rgba(13, 110, 253, 0.12) !important;
+    transform: translateY(-2px) !important; /* Naiknya tipis smooth */
+    z-index: 5 !important;
+}
 
-  /* Transisi Halus */
-  transition: all 0.3s ease !important;
+/* Text Hover Colors */
+.obj_announcement_summary:hover h2 a,
+.obj_announcement_summary:hover h3 a,
+.obj_announcement_summary:hover h4 a {
+    color: #0d6efd !important;
+}
 
-  /* Efek Hover per Item */
-  &:hover {
-    transform: translateX(5px) !important; /* Geser kanan dikit */
-    border-color: #0d6efd !important; /* Border jadi biru */
-    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.08) !important;
-  }
-
-  &:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  /* Judul Per Item */
-  h2,
-  h3 {
-    font-family: "Merriweather", serif !important;
+/* Title Styling */
+.obj_announcement_summary h2,
+.obj_announcement_summary h3,
+.obj_announcement_summary h4 {
+    font-family: "Inter", sans-serif !important;
     font-size: 1.4rem !important;
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+    margin: 0 0 12px 0 !important;
+    line-height: 1.4 !important;
+}
 
-    a {
-      color: #1e293b !important;
-      text-decoration: none !important;
-      font-weight: 800 !important;
-      transition: color 0.2s !important;
+.obj_announcement_summary h2 a,
+.obj_announcement_summary h3 a,
+.obj_announcement_summary h4 a {
+    color: #1e293b !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
 
-      &:hover {
-        color: #0d6efd !important;
-      }
-    }
-  }
-
-  /* Tanggal Posting */
-  .date {
+/* Date Badge */
+.obj_announcement_summary .date {
     display: inline-block !important;
     font-family: "Inter", sans-serif !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
     color: #0d6efd !important;
-    background: #eff6ff !important;
+    background: #f0f7ff !important;
     padding: 5px 12px !important;
-    border-radius: 50px !important;
+    border-radius: 6px !important;
     margin-bottom: 15px !important;
-    border: 1px solid #dbeafe !important;
-  }
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
 
-  /* Isi Ringkasan */
-  .summary {
+/* Summary Content */
+.obj_announcement_summary .summary {
     font-family: "Inter", sans-serif !important;
     font-size: 1rem !important;
-    line-height: 1.8 !important;
+    line-height: 1.7 !important;
     color: #475569 !important;
-    text-align: justify !important;
-
-    p {
-      margin-bottom: 10px !important;
-    }
-  }
 }
 
-/* --- ANIMASI --- */
-@keyframes flowVertical {
-  0%,
-  100% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 0% 100%;
-  }
+/* Read More Button */
+.obj_announcement_summary .read_more {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-top: 18px !important;
+    font-weight: 800 !important;
+    font-size: 0.85rem !important;
+    color: #1e293b !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    gap: 8px !important;
+    transition: all 0.3s !important;
 }
 
-@keyframes expandWidth {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 120px;
-    opacity: 1;
-  }
+.obj_announcement_summary .read_more::after {
+    content: "\f178" !important;
+    font-family: "FontAwesome" !important;
+    font-size: 0.8rem !important;
+    transition: transform 0.3s !important;
 }
 
-@keyframes fadeInContent {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.obj_announcement_summary:hover .read_more {
+    color: #0d6efd !important;
 }
 
-/* --- RESPONSIF (HP) --- */
+.obj_announcement_summary:hover .read_more::after {
+    transform: translateX(5px) !important;
+}
+
+/* 4. DETAIL VIEW (FULL) */
+.obj_announcement_full h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+}
+
+.obj_announcement_full .description {
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+    color: #1e293b !important;
+}
+
+/* 5. RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-  .pkp_page_announcements,
-  .page_announcements {
-    padding: 35px 25px !important;
-    width: 95% !important;
-    border-radius: 15px !important;
-  }
+    .pkp_page_announcements,
+    .page_announcements {
+        padding: 40px 25px !important;
+        margin: 20px auto !important;
+        width: 95% !important;
+    }
+    
+    .obj_announcement_summary {
+        padding: 25px !important;
+    }
+}
 
-  .page_announcements h1 {
-    font-size: 2rem !important;
-    margin-left: 10px !important;
-  }
+/* ========================================================
+   ULTRA-FORCE HOVER SELECTOR (JAMINAN JALAN)
+   ======================================================== */
+body .pkp_structure_page .obj_announcement_summary,
+body .pkp_page_announcements .obj_announcement_summary {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+body .pkp_structure_page .obj_announcement_summary:hover,
+body .pkp_page_announcements .obj_announcement_summary:hover {
+    border-color: rgba(13, 110, 253, 0.4) !important;
+    box-shadow: 0 15px 45px rgba(13, 110, 253, 0.12) !important;
+    transform: translateY(-3px) !important;
+    background: #ffffff !important;
+    z-index: 10 !important;
+}
+
+body .pkp_structure_page .obj_announcement_summary:hover h2 a,
+body .pkp_structure_page .obj_announcement_summary:hover h3 a,
+body .pkp_page_announcements .obj_announcement_summary:hover h2 a {
+    color: #0d6efd !important;
 }
