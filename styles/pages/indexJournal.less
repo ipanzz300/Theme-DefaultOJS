@@ -69,7 +69,7 @@
     display: block !important;
     visibility: visible !important;
     background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
-    padding: 60px 50px !important; /* Kurangi ganjalan kiri-kanan agar lebih ramping */
+    padding: 60px 70px !important;
     border-radius: 20px !important;
     box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
     border: 1px solid rgba(13, 110, 253, 0.12) !important;
@@ -187,45 +187,28 @@
     clear: both;
   }
 
-  @keyframes masukGelinding {
-    0% {
-      opacity: 0;
-      transform: translateX(-150px) rotate(-180deg);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) rotate(0deg);
-    }
-  }
-
   .toc-wrapper .cover {
     float: left !important;
-    width: 250px !important; /* Samakan presisi dengan halaman current */
-    margin-right: 30px !important; /* Jarak lebih rapat dan rapi */
+    width: 300px !important;
+    margin-right: 40px !important;
     margin-bottom: 20px !important;
-    border-radius: 16px !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
     background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    padding: 8px !important; /* Padding seimbang */
-    position: relative !important;
-    z-index: 10 !important;
-
-    /* Animasi Gelinding */
-    animation: masukGelinding 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 8px !important;
   }
 
   .toc-wrapper .cover img {
     display: block !important;
     width: 100% !important;
     height: auto !important;
-    border-radius: 12px !important; /* Sesuai dengan pembungkusnya */
-    object-fit: contain !important;
+    border-radius: 8px !important;
   }
 
   .toc-wrapper .current_issue_title {
-    margin-left: 280px !important; /* Sesuaikan jarak karena lebar cover berubah */
+    margin-left: 340px !important;
     font-family: "Merriweather", serif !important;
     font-size: 2rem !important;
     font-weight: 800 !important;
@@ -237,7 +220,7 @@
   }
 
   .toc-wrapper .heading > .description {
-    margin-left: 280px !important;
+    margin-left: 340px !important;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
     display: block !important;
@@ -249,22 +232,21 @@
   }
 
   .toc-wrapper .heading .published {
-    margin-left: 280px !important;
+    margin-left: 3px !important;
     margin-right: 10px !important;
     margin-top: 20px !important;
     display: inline-flex !important;
     align-items: center !important;
     width: fit-content !important;
-    background: #f0f7ff !important;
+    background: #eff6ff !important;
     padding: 6px 16px !important;
     border-radius: 50px !important;
     font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    color: #0d6efd !important;
-    border: none !important;
+    font-weight: 600 !important;
+    color: #1e40af !important;
+    border: 1px solid #dbeafe !important;
     position: relative !important;
     z-index: 5 !important;
-    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.05) !important;
   }
 
   .toc-wrapper .heading .published::before {
@@ -274,7 +256,7 @@
   }
 
   .toc-wrapper .heading .pub_id {
-    margin-left: 280px !important;
+    margin-left: 340px !important;
     display: block !important;
     margin-top: 8px !important;
   }
@@ -763,7 +745,7 @@
   .current_issue,
   .additional_content,
   .homepage_index .homepage_announcements {
-    padding: 40px 20px !important;
+    padding: 40px 15px !important; /* Slightly tighter for mobile */
     border-radius: 20px !important;
     margin-bottom: 30px !important;
   }
@@ -823,24 +805,25 @@
   }
 
   .toc-wrapper .cover {
+    display: table !important; /* Memaksa box membungkus gambar dengan presisi (fit-content) */
     float: none !important;
-    margin: 0 auto !important;
-    width: fit-content !important; 
-    max-width: 250px !important;
+    margin: 0 auto 25px auto !important;
+    width: auto !important;
+    max-width: 180px !important; /* Samakan dengan halaman internal agar rapat */
     background: #ffffff !important;
-    padding: 6px !important;
+    padding: 8px !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
     border-radius: 16px !important;
   }
 
   .toc-wrapper .cover img {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important; /* Jaga proporsi agar tidak gepeng */
+    height: auto !important;
     display: block !important;
-    border-radius: 8px !important;
-    object-fit: contain !important; /* Pastikan gambar utuh tidak terpotong */
+    border-radius: 12px !important; /* Cutting rapi mengikuti frame */
+    object-fit: contain !important;
   }
 
   .toc-wrapper .current_issue_title {
