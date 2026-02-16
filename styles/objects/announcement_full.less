@@ -1,27 +1,25 @@
-/**
- * ANNOUNCEMENTS PAGE - CONTAINER & DETAIL VIEW
- */
-
 /* 1. CONTAINER UTAMA */
 .pkp_page_announcements,
-.page_announcements {
+.page_announcements,
+.page_announcement {
     display: block !important;
     visibility: visible !important;
     background: #ffffff !important;
-    padding: 60px 70px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03) !important;
-    border: 1px solid #f0f4f8 !important;
-    max-width: 1000px !important;
+    padding: @triple @quadruple !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05) !important;
+    border: 1px solid #f1f5f9 !important;
+    max-width: 1100px !important;
     width: 92% !important;
-    margin: 40px auto !important;
+    margin: 40px auto 60px !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
-/* RGB Blue Line on the LEFT */
+/* RGB Blue Line on the LEFT - Signature Element */
 .pkp_page_announcements::before,
-.page_announcements::before {
+.page_announcements::before,
+.page_announcement::before {
     content: "" !important;
     position: absolute !important;
     top: 0 !important;
@@ -31,55 +29,113 @@
     background: linear-gradient(180deg, #0d6efd, #00d4ff, #0d6efd) !important;
     background-size: 100% 200% !important;
     animation: flowVertical 5s linear infinite !important;
-    z-index: 1 !important;
+    z-index: 10 !important;
 }
 
-@keyframes flowVertical {
-    0% { background-position: 50% 0%; }
-    100% { background-position: 50% 200%; }
+/* 2. BREADCRUMBS STYLING */
+.page_announcements .cmp_breadcrumbs,
+.page_announcement .cmp_breadcrumbs {
+    margin-bottom: 40px !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px dashed #e2e8f0 !important;
 }
 
-/* 2. TYPOGRAPHY H1 */
+/* 3. TYPOGRAPHY & HEADINGS */
 .pkp_page_announcements h1,
-.page_announcements h1 {
+.page_announcements h1,
+.page_announcement h1 {
     font-family: "Merriweather", serif !important;
     font-size: 2.22rem !important;
-    font-weight: 800 !important;
+    font-weight: 900 !important;
     color: #0f172a !important;
-    margin: 0 0 20px 0 !important;
-    padding-bottom: 15px !important;
+    margin: 0 0 30px 0 !important;
+    padding-bottom: 20px !important;
     border-bottom: 2px solid #f1f5f9 !important;
+    letter-spacing: -0.5px !important;
 }
 
-.pkp_page_announcements .announcements_introduction {
+.pkp_page_announcements .announcements_introduction,
+.page_announcements .announcements_introduction {
     font-family: "Inter", sans-serif !important;
-    font-size: 1.05rem !important;
-    line-height: 1.7 !important;
-    color: #64748b !important;
-    margin-bottom: 40px !important;
-}
-
-/* 3. DETAIL VIEW (FULL) */
-.obj_announcement_full h1 {
-    font-family: "Merriweather", serif !important;
-    font-size: 2.5rem !important;
-    font-weight: 800 !important;
-    line-height: 1.2 !important;
-    color: #0f172a !important;
-}
-
-.obj_announcement_full .description {
-    font-size: 1.15rem !important;
+    font-size: 1.1rem !important;
     line-height: 1.8 !important;
-    color: #1e293b !important;
-}  
+    color: #475569 !important;
+    margin-bottom: 45px !important;
+    max-width: 800px !important;
+}
+
+/* 4. ALIGNMENT FIX FOR LIST */
+.cmp_announcements.cmp_announcements {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    
+    > li {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* 3. DETAIL VIEW (FULL ANNOUNCEMENT) */
+.obj_announcement_full {
+    h1 {
+        font-family: "Merriweather", serif !important;
+        font-size: 2.8rem !important;
+        font-weight: 900 !important;
+        line-height: 1.2 !important;
+        color: #0f172a !important;
+        margin-bottom: 25px !important;
+    }
+
+    .date {
+        font-family: "Inter", sans-serif !important;
+        font-size: 0.95rem !important;
+        color: #94a3b8 !important;
+        margin-bottom: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        
+        &:before {
+            .fa();
+            content: @fa-var-calendar !important;
+            color: #cbd5e1 !important;
+        }
+    }
+
+    .description {
+        font-family: "Inter", sans-serif !important;
+        font-size: 1.1rem !important;
+        line-height: 1.8 !important;
+        color: #1e293b !important;
+        
+        p {
+            margin-bottom: 1.5em !important;
+        }
+    }
+}
 
 /* 4. RESPONSIVE MOBILE */
 @media (max-width: 768px) {
     .pkp_page_announcements,
     .page_announcements {
-        padding: 40px 25px !important;
-        margin: 20px auto !important;
-        width: 95% !important;
+        padding: 40px 20px !important;
+        margin: 25px auto !important;
+        width: 94% !important;
+        border-radius: 16px !important;
+    }
+
+    .pkp_page_announcements h1,
+    .page_announcements h1,
+    .page_announcement h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 20px !important;
+        text-align: left !important;
+    }
+
+    .pkp_page_announcements .announcements_introduction,
+    .page_announcements .announcements_introduction {
+        font-size: 1rem !important;
+        text-align: left !important;
+        margin-bottom: 35px !important;
     }
 }
